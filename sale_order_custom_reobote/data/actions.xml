@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_popular_campo_reobote_custom" model="ir.actions.server">
+            <field name="name">Popular Campo em Reobote Custom</field>
+            <field name="model_id" ref="model_sale_order_line"/>
+            <field name="state">code</field>
+            <field name="code">
+                <![CDATA[
+                # Chamar o método no modelo
+                record.atualizar_reobote_custom_id()
+                ]]>
+            </field>
+            <field name="condition">
+                <![CDATA[
+                (record.codigo_cliente or record.diametro_externo or record.diametro_interno or record.espessura or record.comprimento or record.perfil_externo or record.perfil_interno or record.norma or record.materia_prima or record.aco or record.fornecimento or record.superficie or record.faces or record.embalagem) and not record.reobote_custom_id
+                ]]>
+            </field>
+            <field name="trigger">on_write</field>
+        </record>
+    </data>
+</odoo>
