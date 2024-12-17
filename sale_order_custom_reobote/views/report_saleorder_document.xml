@@ -1,0 +1,235 @@
+<odoo>
+      <template id="report_saleorder_document_reobote" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//h2[@class='mt-4']" position="replace">
+            <center>
+                <h2 class="mt-4">
+                    <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
+                    <span t-elif="doc.state in ['draft','sent']">ORÇAMENTO # </span>
+                    <span t-else="">ORDEM DE VENDA # </span>
+                    <span t-field="doc.name"/>
+                </h2>
+                <p><strong>Data de emissão: </strong><span class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></p>
+            </center>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="before">
+            <div class="row mt-4 total" id="tabela_topo">
+                <div class="col-12">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CLIENTE</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VENDEDOR</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PRAZO DE ENTREGA</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FRETE</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CONDIÇÃO</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PIS INCLUSO</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">COFINS INCLUSO</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ICMS INCLUSO</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">IPI A INCLUIR</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">TOTAL DA PROPOSTA (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><span t-field="doc.partner_id.name"/></td>
+                                <td class="text-center"><span t-field="doc.user_id.name"/></td>
+                                <td class="text-center"><span t-field="doc.commitment_date" t-options='{"widget": "date"}'/></td>    
+                                <td class="text-center"><span/></td> 
+                                <td class="text-center"><span t-field="doc.payment_term_id.name"/></td> 
+                                <td class="text-center"><span/></td> 
+                                <td class="text-center"><span/></td> 
+                                <td class="text-center"><span/></td> 
+                                <td class="text-center"><span/></td> 
+                                <td class="text-center"><span t-field="doc.amount_total"/></td>
+                            </tr>
+                            <tr>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="after">
+            <div class="row mt-4">
+                <div class="col-12">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th colspan="7" style="background-color: #595959; color: white; font-weight: bold;">RESUMO DA PROPOSTA</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ITEM</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO CLIENTE</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO REOBOTE</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DESCRIÇÃO</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VOLUME</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">UN.</th>
+                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PREÇO (SEM IPI)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.order_line" t-as="line">
+                                <tr>
+                                    <td class="text-center"><span t-esc="line_index + 1"/></td>
+                                    <td class="text-center"><span t-field="line.product_id.codigo_cliente"/></td>
+                                    <td class="text-center"><span t-field="line.product_id.default_code"/></td>
+                                    <td class="text-center"><span t-field="line.product_id.name"/></td>
+                                    <td class="text-center"><span t-field="line.product_uom_qty"/></td>
+                                    <td class="text-center"><span t-field="line.product_uom.name"/></td>
+                                    <td class="text-center"><span t-field="line.price_unit"/></td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                                <td/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p style="page-break-after:always;">
+
+            </p> 
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div id="informations"/>
+        </xpath>
+        <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="after">
+            <div class="clearfix">
+                <t t-foreach="doc.order_line" t-as="line">
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th colspan="8" class="text-left" style="background-color: #595959; color: white; font-weight: bold;">
+                                            ITEM <span t-esc="line_index + 1"/> - <span t-field="line.product_id.name"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO REOBOTE</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO CLIENTE</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DIAMETRO EXT.</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DIAMETRO INT.</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ESPESSURA</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">COMPRIMENTO</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PERFIL EXTERNO</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PERFIL INTERNO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><span t-field="line.product_id.default_code"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.codigo_cliente"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.diametro_externo"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.diametro_interno"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.espessura"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.comprimento"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.perfil_externo"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.perfil_interno"/></td>
+                                    </tr>
+                                    <tr style="height: 1px;">
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">NORMA</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">MATERIA-PRIMA</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">AÇO</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FORNECIMENTO</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">SUPERFÍCIE</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FACES</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">EMBALAGEM</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VOLUME</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">UN.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><span t-field="line.product_id.norma"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.materia_prima"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.aco"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.fornecimento"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.superficie"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.faces"/></td>
+                                        <td class="text-center"><span t-field="line.product_id.embalagem"/></td>
+                                        <td class="text-center"><span t-field="line.product_uom_qty"/></td>
+                                        <td class="text-center"><span t-field="line.product_uom.name"/></td>
+                                    </tr>
+                                    <tr style="height: 1px;">
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-sm table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">OBSERVAÇÕES</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PREÇO UNITÁRIO</th>
+                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VALOR TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><span t-field="line.name"/></td>
+                                        <td class="text-center"><span t-field="line.price_unit"/></td>
+                                        <td class="text-center"><span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td/>
+                                        <td/>
+                                        <td/>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='so_total_summary']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//div[@name='signature']" position="after">
+            <p style="page-break-after:always;">
+
+            </p>  
+        </xpath>
+       </template>
+</odoo>
