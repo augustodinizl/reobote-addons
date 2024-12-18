@@ -11,7 +11,12 @@
                         <group>
                             <group>
                                 <field name="codigo_cliente"/>
-                                <field name="diametro_externo"/>
+                                <div>
+                                    <field name="diametro_externo"/>
+                                    <field name="dint_tolerancia_maior"/>
+                                    <field name="dint_tolerancia_menor"/>
+                                </div>
+                                <div>
                                 <field name="diametro_interno"/>
                                 <field name="espessura"/>
                                 <field name="comprimento"/>
