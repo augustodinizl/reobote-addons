@@ -8,31 +8,90 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='general_information']" position="after">
                     <page name="reobote_info" string="Informações Reobote">
+                    <group>
                         <group>
+                        <label for="codigo_cliente"/>
+                        <field name="codigo_cliente"/>
+                        <label for="espessura"/><field name="espessura"/>
+                        <label for="perfil_externo"/><field name="perfil_externo"/>
+                        <label for="perfil_interno"/><field name="perfil_interno"/>
+                        <group col="3" style="width: 100%">
                             <group>
-                                <field name="codigo_cliente"/>
-                                <div>
-                                    <field name="diametro_externo"/>
-                                    <field name="dint_tolerancia_maior"/>
-                                    <field name="dint_tolerancia_menor"/>
-                                </div>
-                                <div>
-                                <field name="diametro_interno"/>
-                                <field name="espessura"/>
-                                <field name="comprimento"/>
-                                <field name="perfil_externo"/>
-                                <field name="perfil_interno"/>
+                            <div style="width: 10em;">
+                                <label for="diametro_externo"/><field name="diametro_externo"/>
+                            </div>
                             </group>
                             <group>
-                                <field name="norma"/>
-                                <field name="materia_prima"/>
-                                <field name="aco"/>
-                                <field name="fornecimento"/>
-                                <field name="superficie"/>
-                                <field name="faces"/>
-                                <field name="embalagem"/>
+                                <div style="width: 6em;">
+                                <label for="dext_tolerancia_maior" string="Tol. DE +"/>
+                                <field name="dext_tolerancia_maior"/>
+                                </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="dext_tolerancia_menor" string="Tol. DE -"/>
+                                <field name="dext_tolerancia_menor"/>
+                                </div>
                             </group>
                         </group>
+                        <group col="3" style="width: 100%">
+                            <group>
+                            <div style="width: 10em;">
+                                <label for="diametro_interno"/><field name="diametro_interno"/>
+                            </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="dint_tolerancia_maior" string="Tol. DI +"/>
+                                <field name="dint_tolerancia_maior"/>
+                                </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="dint_tolerancia_menor" string="Tol. DI -"/>
+                                <field name="dint_tolerancia_menor"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group col="4" style="width: 100%">
+                            <group>
+                            <div style="width: 6em;">
+                                <label for="variacao"/><field name="variacao"/>
+                            </div>
+                            </group>
+                            <group>
+                            <div style="width: 10em;">
+                                <label for="comprimento"/><field name="comprimento"/>
+                            </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="comp_tolerancia_maior" string="Tol.C+"/>
+                                <field name="comp_tolerancia_maior"/>
+                                </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="comp_tolerancia_menor" string="Tol.C-"/>
+                                <field name="comp_tolerancia_menor"/>
+                                </div>
+                            </group>
+                        </group>
+                        </group>
+                        <group>
+                        <label for="norma"/><field name="norma"/>
+                        <label for="materia_prima"/><field name="materia_prima"/>
+                        <label for="aco"/><field name="aco"/>
+                        <label for="fornecimento"/><field name="fornecimento"/>
+                        <label for="superficie"/><field name="superficie"/>
+                        <label for="faces"/><field name="faces"/>
+                        <label for="embalagem"/><field name="embalagem"/>
+                        <group/>
+                        </group>
+                    </group>
+                    <div>
+                        
+                    </div>
                     </page>
                 </xpath>
             </field>
