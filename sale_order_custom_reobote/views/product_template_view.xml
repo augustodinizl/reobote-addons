@@ -90,7 +90,7 @@
                         </group>
                     </group>
                     <div>
-                        
+                        <label for="concatenado"/><field name="concatenado"/ >  
                     </div>
                     </page>
                 </xpath>

@@ -25,53 +25,79 @@ class ProductTemplate(models.Model):
     superficie = fields.Many2one('reobote.custom', string="Superfície", domain=[('campo', '=', 'superficie')])
     faces = fields.Many2one('reobote.custom', string="Faces", domain=[('campo', '=', 'faces')])
     embalagem = fields.Many2one('reobote.custom', string="Embalagem", domain=[('campo', '=', 'embalagem')])
+    concatenado = fields.Text(string="Concatenado")
 
-    @api.onchange(
-        'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-        'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
-        'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
-    )
-    def _onchange_reobote_custom_fields(self):
-        """
-        Este método onchange não é mais necessário e foi removido.
-        A lógica de atualizar o campo 'campo' em reobote.custom será feita diretamente
-        nos métodos create e write, tornando o código mais eficiente.
-        """
-        pass
+    def _update_reobote_custom_campo(self, record, fields_to_update):
+        """Atualiza o campo 'campo' na tabela reobote.custom."""
+        for field_name in fields_to_update:
+            if record[field_name]:
+                custom = self.env['reobote.custom'].browse(record[field_name].id)
+                if custom and custom.campo != field_name:
+                    custom.campo = field_name
+            else:
+                old_custom = record.read([field_name])[0][field_name]
+                if old_custom:
+                    custom = self.env['reobote.custom'].browse(old_custom[0])
+                    if custom and custom.campo == field_name:
+                        custom.campo = False
 
     @api.model
     def create(self, vals):
-        """
-        Atualiza o campo `campo` ao criar um registro em `product.template`.
-        """
         res = super(ProductTemplate, self).create(vals)
-        for field_name in [
+        self._update_reobote_custom_campo(res, [
             'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
             'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
             'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
-        ]:
-            if vals.get(field_name):
-                custom = self.env['reobote.custom'].browse(vals[field_name])
-                if custom and not custom.campo: # Verifica se o campo já não foi setado
-                    custom.campo = field_name
+        ])
         return res
+
     def write(self, vals):
-            """
-            Atualiza o campo `campo` ao modificar um registro em `product.template`.
-            """
-            res = super(ProductTemplate, self).write(vals)
-            for record in self:
-                for field_name in [
-                    'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-                    'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
-                    'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
-                ]:
-                    if field_name in vals and vals[field_name]:
-                        custom = self.env['reobote.custom'].browse(vals[field_name])
-                        if custom and custom.campo != field_name: # Verifica se o campo já não tem o valor correto
-                            custom.campo = field_name
-                    elif field_name in vals and not vals[field_name]: # Caso o campo seja limpo
-                        old_custom = record[field_name]
-                        if old_custom and old_custom.campo == field_name:
-                            old_custom.campo = False
-            return res
+        res = super(ProductTemplate, self).write(vals)
+        for record in self:
+            self._update_reobote_custom_campo(record, [
+                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
+                'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
+                'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
+            ])
+        return res
+
+    @api.onchange('concatenado')
+    def _onchange_concatenado(self):
+        if not self.concatenado:
+            for campo in [
+                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
+                'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+                'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
+                'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
+                'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
+            ]:
+                self[campo] = False
+            return
+
+        valores = [v.strip() for v in self.concatenado.split('|')]
+        campos = [
+            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
+            'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+            'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
+            'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
+            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
+        ]
+
+        # Usar busca única para todos os valores
+        reobote_customs = self.env['reobote.custom'].search([('name', 'in', valores)])
+        reobote_customs_dict = {rc.name: rc for rc in reobote_customs}
+
+        new_records_commands = []
+        
+        valores += [''] * (len(campos) - len(valores)) # Completa a lista de valores com strings vazias
+
+        for i, campo in enumerate(campos):
+            valor = valores[i] if i < len(valores) else ''
+            if valor:
+                reobote_custom = reobote_customs_dict.get(valor)
+                if reobote_custom:
+                    self[campo] = reobote_custom.id
+                else:
+                    # Comando para criar novo registro (adiado)
+                    new_records_commands.append((0, 0, {'name': valor, 'campo': campo}))
+                    self[campo]
