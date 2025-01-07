@@ -17,42 +17,30 @@
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CLIENTE</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VENDEDOR</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PRAZO DE ENTREGA</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FRETE</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CONDIÇÃO</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PIS INCLUSO</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">COFINS INCLUSO</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ICMS INCLUSO</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">IPI A INCLUIR</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">TOTAL DA PROPOSTA (R$)</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CLIENTE</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VENDEDOR</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PRAZO DE ENTREGA</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FRETE</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CONDIÇÃO</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PIS INCLUSO</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COFINS INCLUSO</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ICMS INCLUSO</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">IPI A INCLUIR</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">TOTAL DA PROPOSTA</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-center"><span t-field="doc.partner_id.name"/></td>
-                                <td class="text-center"><span t-field="doc.user_id.name"/></td>
-                                <td class="text-center"><span t-field="doc.commitment_date" t-options='{"widget": "date"}'/></td>    
-                                <td class="text-center"><span/></td> 
-                                <td class="text-center"><span t-field="doc.payment_term_id.name"/></td> 
-                                <td class="text-center"><span/></td> 
-                                <td class="text-center"><span/></td> 
-                                <td class="text-center"><span/></td> 
-                                <td class="text-center"><span/></td> 
-                                <td class="text-center"><span t-field="doc.amount_total"/></td>
-                            </tr>
-                            <tr>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.partner_id.name"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.user_id.name"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.commitment_date" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.payment_term_id.name"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,49 +50,39 @@
         <xpath expr="//div[@id='informations']" position="after">
             <div class="row mt-4">
                 <div class="col-12">
-                    <table class="table table-borderless">
+                    <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
-                                <th colspan="7" style="background-color: #595959; color: white; font-weight: bold;">RESUMO DA PROPOSTA</th>
+                                <th colspan="24" class="text-left" style="background-color: #595959; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 3px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                    RESUMO DA PROPOSTA
+                                </th>
                             </tr>
                             <tr>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ITEM</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO CLIENTE</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO REOBOTE</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DESCRIÇÃO</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VOLUME</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">UN.</th>
-                                <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PREÇO (SEM IPI)</th>
+                                <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ITEM</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO REOBOTE</th>
+                                <th colspan="9" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DESCRIÇÃO</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
+                                <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO (SEM IPI)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <t t-foreach="doc.order_line" t-as="line">
-                                <tr>
-                                    <td class="text-center"><span t-esc="line_index + 1"/></td>
-                                    <td class="text-center"><span t-field="line.product_id.codigo_cliente"/></td>
-                                    <td class="text-center"><span t-field="line.product_id.default_code"/></td>
-                                    <td class="text-center"><span t-field="line.product_id.name"/></td>
-                                    <td class="text-center"><span t-field="line.product_uom_qty"/></td>
-                                    <td class="text-center"><span t-field="line.product_uom.name"/></td>
-                                    <td class="text-center"><span t-field="line.price_unit"/></td>
-                                </tr>
+                              <tr>
+                                  <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line_index + 1"/></td>
+                                  <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.codigo_cliente"/></td>
+                                  <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.default_code"/></td>
+                                  <td colspan="9" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.name"/></td>
+                                  <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_uom_qty"/></td>
+                                  <td colspan="1" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_uom.name"/></td>
+                                  <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
+                              </tr>
                             </t>
-                            <tr>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                                <td/>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <p style="page-break-after:always;">
-
-            </p> 
         </xpath>
         <xpath expr="//div[@id='informations']" position="replace">
             <div id="informations"/>
@@ -120,101 +98,71 @@
                             <table class="table table-sm table-borderless">
                                 <thead>
                                     <tr>
-                                        <th colspan="8" class="text-left" style="background-color: #595959; color: white; font-weight: bold;">
+                                        <th colspan="24" class="text-left" style="background-color: #595959; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 3px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
                                             ITEM <span t-esc="line_index + 1"/> - <span t-field="line.product_id.name"/>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO REOBOTE</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">CÓDIGO CLIENTE</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DIAMETRO EXT.</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">DIAMETRO INT.</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">ESPESSURA</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">COMPRIMENTO</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PERFIL EXTERNO</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PERFIL INTERNO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO REOBOTE</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO EXT.</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO INT.</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ESPESSURA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COMPRIMENTO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL EXTERNO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL INTERNO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center"><span t-field="line.product_id.default_code"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.codigo_cliente"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.diametro_externo"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.diametro_interno"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.espessura"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.comprimento"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.perfil_externo"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.perfil_interno"/></td>
-                                    </tr>
-                                    <tr style="height: 1px;">
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.default_code"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.codigo_cliente"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.diametro_externo"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.diametro_interno"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.espessura"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.comprimento"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.perfil_externo"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.perfil_interno"/></td>
                                     </tr>
                                 </tbody>
-                            </table> 
-                            <table class="table table-sm table-borderless">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">NORMA</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">MATERIA-PRIMA</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">AÇO</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FORNECIMENTO</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">SUPERFÍCIE</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">FACES</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">EMBALAGEM</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VOLUME</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">UN.</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">NORMA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">MATERIA-PRIMA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">AÇO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FORNECIMENTO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">SUPERFÍCIE</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FACES</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">EMBALAGEM</th>
+                                        <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
+                                        <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center"><span t-field="line.product_id.norma"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.materia_prima"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.aco"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.fornecimento"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.superficie"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.faces"/></td>
-                                        <td class="text-center"><span t-field="line.product_id.embalagem"/></td>
-                                        <td class="text-center"><span t-field="line.product_uom_qty"/></td>
-                                        <td class="text-center"><span t-field="line.product_uom.name"/></td>
-                                    </tr>
-                                    <tr style="height: 1px;">
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
-                                        <td/>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.norma"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.materia_prima"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.aco"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.fornecimento"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.superficie"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.faces"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_id.embalagem"/></td>
+                                        <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_uom_qty"/></td>
+                                        <td colspan="1" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.product_uom.name"/></td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            <table class="table table-sm table-borderless">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">OBSERVAÇÕES</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">PREÇO UNITÁRIO</th>
-                                        <th class="text-center" style="background-color: #054790; color: white; font-weight: bold;">VALOR TOTAL</th>
+                                        <th colspan="18" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">OBSERVAÇÕES</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO UNITÁRIO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VALOR TOTAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center"><span t-field="line.name"/></td>
-                                        <td class="text-center"><span t-field="line.price_unit"/></td>
-                                        <td class="text-center"><span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td/>
-                                        <td/>
-                                        <td/>
+                                        <td colspan="18" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.name"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -223,6 +171,7 @@
                 </t>
             </div>
         </xpath>
+ 
         <xpath expr="//div[@name='so_total_summary']" position="attributes">
             <attribute name="invisible">1</attribute>
         </xpath>

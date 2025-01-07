@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherit_reobote" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.reobote</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="l10n_br_sale.l10n_br_sale_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/form/notebook/page[@name='fiscal_taxes']" position="before">
+                    <page name="reob" string="Infos Reob.">
+                        <group name="a">
+                            <group name="coluna1">
+                                <field name="codigo_cliente"/>
+                                <field name="diametro_externo"/>
+                                <field name="diametro_interno"/>
+                                <field name="espessura"/>
+                                <field name="comprimento"/>
+                                <field name="perfil_externo"/>
+                                <field name="perfil_interno"/>
+                            </group>
+                            <group name="coluna2">
+                                <field name="norma"/>
+                                <field name="materia_prima"/>
+                                <field name="aco"/>
+                                <field name="fornecimento"/>
+                                <field name="superficie"/>
+                                <field name="faces"/>
+                                <field name="embalagem"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

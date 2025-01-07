@@ -60,7 +60,7 @@
                             </div>
                             </group>
                             <group>
-                            <div style="width: 10em;">
+                            <div style="width: 8em;">
                                 <label for="comprimento"/><field name="comprimento"/>
                             </div>
                             </group>
@@ -89,9 +89,11 @@
                         <group/>
                         </group>
                     </group>
-                    <div>
-                        <label for="concatenado"/><field name="concatenado"/ >  
-                    </div>
+                    <group>
+			<div style="width= 100%">
+                        <label for="concatenado"/><field name="concatenado" onchange="1"/>
+			</div>  
+                    </group>
                     </page>
                 </xpath>
             </field>

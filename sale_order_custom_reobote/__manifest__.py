@@ -1,6 +1,6 @@
 {
     'name': 'Sale Order Customization - Reobote',
-    'version': '16.0.1.7.0',
+    'version': '16.0.1.7.2',
     'category': 'Sales',
     'summary': 'Customizations for Sale Orders - Reobote',
     'description': """
