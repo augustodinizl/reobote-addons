@@ -25,6 +25,8 @@ class ProductTemplate(models.Model):
     superficie = fields.Many2one('reobote.custom', string="Superfície", domain=[('campo', '=', 'superficie')])
     faces = fields.Many2one('reobote.custom', string="Faces", domain=[('campo', '=', 'faces')])
     embalagem = fields.Many2one('reobote.custom', string="Embalagem", domain=[('campo', '=', 'embalagem')])
+
+    # Campo concatenado - usado como input
     concatenado = fields.Text(string="Concatenado")
 
     def _update_reobote_custom_campo(self, record, fields_to_update):
@@ -52,6 +54,10 @@ class ProductTemplate(models.Model):
         return res
 
     def write(self, vals):
+        # Se 'concatenado' estiver presente nas vals e não for vazio, processá-lo antes de chamar o super
+        if 'concatenado' in vals and vals['concatenado']:
+            self.processar_concatenado(vals)
+
         res = super(ProductTemplate, self).write(vals)
         for record in self:
             self._update_reobote_custom_campo(record, [
@@ -61,43 +67,46 @@ class ProductTemplate(models.Model):
             ])
         return res
 
-    @api.onchange('concatenado')
-    def _onchange_concatenado(self):
-        if not self.concatenado:
-            for campo in [
-                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-                'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
-                'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
-                'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
-                'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
-            ]:
-                self[campo] = False
-            return
-
-        valores = [v.strip() for v in self.concatenado.split('|')]
+    def processar_concatenado(self, vals):
+        valores = [v.strip() for v in vals['concatenado'].split('|')]
         campos = [
             'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
             'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
             'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
             'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
-            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
+            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem', 'lst_price' 
         ]
+
+        # Garante que 'valores' tenha pelo menos o mesmo número de elementos que 'campos'
+        valores += [''] * (len(campos) - len(valores))
 
         # Usar busca única para todos os valores
         reobote_customs = self.env['reobote.custom'].search([('name', 'in', valores)])
         reobote_customs_dict = {rc.name: rc for rc in reobote_customs}
 
-        new_records_commands = []
-        
-        valores += [''] * (len(campos) - len(valores)) # Completa a lista de valores com strings vazias
-
+        vals_to_write = {}
         for i, campo in enumerate(campos):
-            valor = valores[i] if i < len(valores) else ''
+            valor = valores[i]
             if valor:
                 reobote_custom = reobote_customs_dict.get(valor)
                 if reobote_custom:
-                    self[campo] = reobote_custom.id
+                    vals_to_write[campo] = reobote_custom.id
                 else:
-                    # Comando para criar novo registro (adiado)
-                    new_records_commands.append((0, 0, {'name': valor, 'campo': campo}))
-                    self[campo]
+                    # Cria um novo registro em 'reobote.custom'
+                    new_custom = self.env['reobote.custom'].create({'name': valor, 'campo': campo})
+                    vals_to_write[campo] = new_custom.id
+            else:
+                vals_to_write[campo] = False
+
+        # Extrair o preço e atualizar lst_price
+        try:
+            preco = float(valores[-1])  # O último valor é o preço
+            vals_to_write['lst_price'] = preco
+        except (IndexError, ValueError):
+            # Lidar com o caso em que o preço não está presente ou é inválido
+            pass
+
+        # Atualiza vals com os novos valores
+        vals.update(vals_to_write)
+        # Remove o campo 'concatenado' de vals 
+        del vals['concatenado']
