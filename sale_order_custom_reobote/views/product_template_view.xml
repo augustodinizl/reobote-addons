@@ -21,16 +21,17 @@
                                 <label for="diametro_externo"/><field name="diametro_externo"/>
                             </div>
                             </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="dext_tolerancia_maior" string="Tol. DE +"/>
-                                <field name="dext_tolerancia_maior"/>
-                                </div>
-                            </group>
+                            
                             <group>
                                 <div style="width: 6em;">
                                 <label for="dext_tolerancia_menor" string="Tol. DE -"/>
                                 <field name="dext_tolerancia_menor"/>
+                                </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="dext_tolerancia_maior" string="Tol. DE +"/>
+                                <field name="dext_tolerancia_maior"/>
                                 </div>
                             </group>
                         </group>
@@ -40,23 +41,24 @@
                                 <label for="diametro_interno"/><field name="diametro_interno"/>
                             </div>
                             </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="dint_tolerancia_maior" string="Tol. DI +"/>
-                                <field name="dint_tolerancia_maior"/>
-                                </div>
-                            </group>
+                            
                             <group>
                                 <div style="width: 6em;">
                                 <label for="dint_tolerancia_menor" string="Tol. DI -"/>
                                 <field name="dint_tolerancia_menor"/>
                                 </div>
                             </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="dint_tolerancia_maior" string="Tol. DI +"/>
+                                <field name="dint_tolerancia_maior"/>
+                                </div>
+                            </group>
                         </group>
                         <group col="4" style="width: 100%">
                             <group>
                             <div style="width: 6em;">
-                                <label for="variacao"/><field name="variacao"/>
+                                <label for="variacao" string="Tipo"/><field name="variacao"/>
                             </div>
                             </group>
                             <group>
@@ -64,16 +66,17 @@
                                 <label for="comprimento"/><field name="comprimento"/>
                             </div>
                             </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="comp_tolerancia_maior" string="Tol.C+"/>
-                                <field name="comp_tolerancia_maior"/>
-                                </div>
-                            </group>
+                            
                             <group>
                                 <div style="width: 6em;">
                                 <label for="comp_tolerancia_menor" string="Tol.C-"/>
                                 <field name="comp_tolerancia_menor"/>
+                                </div>
+                            </group>
+                            <group>
+                                <div style="width: 6em;">
+                                <label for="comp_tolerancia_maior" string="Tol.C+"/>
+                                <field name="comp_tolerancia_maior"/>
                                 </div>
                             </group>
                         </group>
