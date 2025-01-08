@@ -93,9 +93,12 @@
                         </group>
                     </group>
                     <group>
-			<div style="width= 100%">
-                        <label for="concatenado"/><field name="concatenado" onchange="1"/>
-			</div>  
+                        <group>
+                           <label for="obs" string="Observação"/><field name="obs"/>
+                        </group>
+                        <group>
+                            <label for="concatenado"/><field name="concatenado" onchange="1"/>
+                        </group>  
                     </group>
                     </page>
                 </xpath>
