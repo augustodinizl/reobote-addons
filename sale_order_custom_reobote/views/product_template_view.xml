@@ -94,10 +94,10 @@
                     </group>
                     <group>
                         <group>
-                           <label for="obs" string="Observação"/><field name="obs"/>
+                           <field name="obs"/>
                         </group>
                         <group>
-                            <label for="concatenado"/><field name="concatenado" onchange="1"/>
+                            <field name="concatenado" onchange="1"/>
                         </group>  
                     </group>
                     </page>
