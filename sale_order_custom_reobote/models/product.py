@@ -74,7 +74,7 @@ class ProductTemplate(models.Model):
             'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
             'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
             'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
-            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem', 'lst_price' 
+            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem', 'list_price' 
         ]
 
         # Garante que 'valores' tenha pelo menos o mesmo número de elementos que 'campos'
@@ -101,7 +101,7 @@ class ProductTemplate(models.Model):
         # Extrair o preço e atualizar lst_price
         try:
             preco = float(valores[-1])  # O último valor é o preço
-            vals_to_write['lst_price'] = preco
+            vals_to_write['list_price'] = preco
         except (IndexError, ValueError):
             # Lidar com o caso em que o preço não está presente ou é inválido
             pass
