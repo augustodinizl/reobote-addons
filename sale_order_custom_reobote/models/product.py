@@ -75,7 +75,7 @@ class ProductTemplate(models.Model):
             'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
             'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
             'comp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
-            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem', 'obs', 'list_price' 
+            'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem', 'list_price' 
         ]
 
         # Garante que 'valores' tenha pelo menos o mesmo número de elementos que 'campos'
