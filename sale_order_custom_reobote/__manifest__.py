@@ -14,7 +14,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/product_template_view.xml', 
-        'views/report_saleorder_document.xml', 
+        'views/report_saleorder_document.xml',
+        'views/web_external_layout_standard.xml', 
     ],
     'installable': True,
     'auto_install': False,
