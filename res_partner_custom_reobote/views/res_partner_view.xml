@@ -14,7 +14,7 @@
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='legal_name']" position="before">
-                   <field name="categoria_produto_id"/>
+                   <field name="nome_curto_cliente"/>
                 </xpath>
             </field>
         </record>
