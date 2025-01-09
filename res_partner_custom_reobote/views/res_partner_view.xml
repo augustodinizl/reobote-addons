@@ -13,6 +13,9 @@
                         </group>
                     </page>
                 </xpath>
+                <xpath expr="//field[@name='legal_name']" position="before">
+                   <field name="categoria_produto_id"/>
+                </xpath>
             </field>
         </record>
     </data>
