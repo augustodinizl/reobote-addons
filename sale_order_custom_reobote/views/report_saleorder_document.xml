@@ -175,11 +175,6 @@
         <xpath expr="//div[@name='so_total_summary']" position="attributes">
             <attribute name="invisible">1</attribute>
         </xpath>
-        <xpath expr="//div[@name='signature']" position="after">
-            <p style="page-break-after:always;">
-
-            </p>  
-        </xpath>
         <xpath expr="//div[@id='total']" position="attributes">
           <attribute name="t-att-style">'display: none;'</attribute>
         </xpath>
