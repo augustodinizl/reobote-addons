@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_header_inherit_boxed" inherit_id="web.external_layout_boxed" name="Report Header Inherit Boxed">
+            <xpath expr="//div[@class='header o_company_#{company.id}_layout']" position="replace">
+                <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                    <div class="o_boxed_header">
+                        <div class="row mb-4">
+                            <div class="col-6" style="display: flex; align-items: center;">
+                                <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo" style="max-height: 60px;"/>
+                            </div>
+                            <div class="col-6 text-end" style="font-size: 12px;">
+                                <div t-field="company.report_header" style="font-weight: bold; font-size: 16px;"/>
+                                <div name="company_address">
+                                     <ul class="list-unstyled">
+                                        <li>Avenida Henry Ford, 932</li>
+                                        <li>Mooca, São Paulo/SP, CEP 03104-000</li>
+                                        <li>11 2727-4681 | 11 2608-6612</li>
+                                        <li>www.reobote.ind.br</li> 
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
