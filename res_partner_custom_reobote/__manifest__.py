@@ -11,7 +11,7 @@
     'category': 'Sales',
     'depends': ['base', 'product'],
     'data': [
-        'views/res_partner_views.xml',
+        'view/res_partner_view.xml',
     ],
     'installable': True,
     'auto_install': False,
