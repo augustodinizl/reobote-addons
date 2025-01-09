@@ -93,7 +93,7 @@
         <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="after">
             <div class="clearfix">
                 <t t-foreach="doc.order_line" t-as="line">
-                    <div class="row mt-4">
+                    <div class="row mt-4" style="page-break-inside: avoid;">
                         <div class="col-12">
                             <table class="table table-sm table-borderless">
                                 <thead>
