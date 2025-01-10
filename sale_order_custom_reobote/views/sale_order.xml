@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_order_form_inherit_reobote" model="ir.ui.view">
+      <field name="name">sale.order.form.inherit.reobote</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <group name="partner_details" position="after">
+          <group name="reobote_custom_fields" string="Informações Adicionais">
+            <field name="prazo_entrega"/>
+            <field name="frete"/>
+            <field name="pis_incluso"/>
+            <field name="cofins_incluso"/>
+            <field name="icms_incluso"/>
+            <field name="ipi_a_incluir"/>
+          </group>
+        </group>
+      </field>
+    </record>
+  </data>
+</odoo>
