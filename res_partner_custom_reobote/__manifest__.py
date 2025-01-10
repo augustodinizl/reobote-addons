@@ -9,7 +9,7 @@
     """,
     'author': "LTCS",
     'category': 'Sales',
-    'depends': ['base', 'product'],
+    'depends': ['base', 'product', 'sale'],
     'data': [
         'views/res_partner_view.xml',
     ],
