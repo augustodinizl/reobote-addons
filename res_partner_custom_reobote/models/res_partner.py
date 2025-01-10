@@ -16,7 +16,7 @@ class ResPartner(models.Model):
 
         if partner.is_company and partner.nome_curto_cliente:
             product_category = self.env['product.category'].search([
-                ('name', '=', 'Produto Finalizado')
+                ('name', '=', 'Produto Acabado')
             ], limit=1)
 
             if not product_category:
