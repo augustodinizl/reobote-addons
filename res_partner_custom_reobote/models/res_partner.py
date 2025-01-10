@@ -20,7 +20,7 @@ class ResPartner(models.Model):
             ], limit=1)
 
             if not product_category:
-                raise ValueError(_("Categoria 'Produto Finalizado' não encontrada. Crie-a primeiro."))
+                raise ValueError(_("Categoria 'Produto Acabado' não encontrada. Crie-a primeiro."))
 
             # Cria a subcategoria diretamente no campo categoria_produto_id:
             partner.write({
