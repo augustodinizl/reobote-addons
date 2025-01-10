@@ -13,7 +13,7 @@
                         </group>
                     </page>
                 </xpath>
-                <xpath expr="//field[@name='legal_name']" position="before">
+                <xpath expr="//field[@name='name']" position="before">
                    <field name="nome_curto_cliente"/>
                 </xpath>
             </field>
