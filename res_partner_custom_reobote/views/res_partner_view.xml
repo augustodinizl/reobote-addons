@@ -14,7 +14,8 @@
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='name']" position="before">
-                   <field name="nome_curto_cliente"/>
+                   <label for="nome_curto_cliente" string="Nome Curto (Para código do produto)"/>
+                   <field name="nome_curto_cliente" required="1"/>
                 </xpath>
             </field>
         </record>
