@@ -1,4 +1,6 @@
 from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
+
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -13,22 +15,38 @@ class ResPartner(models.Model):
         diretamente no campo categoria_produto_id do parceiro.
         """
         partner = super(ResPartner, self).create(vals)
+        partner._create_product_category()
+        return partner
 
-        if partner.is_company and partner.nome_curto_cliente:
-            product_category = self.env['product.category'].search([
-                ('name', '=', 'Produto Acabado')
-            ], limit=1)
+    def write(self, vals):
+        """
+        Sobrescreve o método write para criar uma nova subcategoria de produto
+        se o nome_curto_cliente for alterado.
+        """
+        result = super(ResPartner, self).write(vals)
+        for partner in self:
+            if 'nome_curto_cliente' in vals:
+                partner._create_product_category()
+        return result
 
-            if not product_category:
-                raise ValueError(_("Categoria 'Produto Acabado' não encontrada. Crie-a primeiro."))
+    def _create_product_category(self):
+        """
+        Cria uma nova categoria de produto associada ao parceiro, se necessário.
+        """
+        for partner in self:
+            if partner.is_company and partner.nome_curto_cliente:
+                product_category = self.env['product.category'].search([
+                    ('name', '=', 'Produto Acabado')
+                ], limit=1)
 
-            # Cria a subcategoria diretamente no campo categoria_produto_id:
-            partner.write({
-                'categoria_produto_id': self.env['product.category'].create({
+                if not product_category:
+                    raise ValidationError(_("Categoria 'Produto Acabado' não encontrada. Crie-a primeiro."))
+
+                # Cria a nova subcategoria sem verificar se já existe:
+                new_category = self.env['product.category'].create({
                     'name': partner.nome_curto_cliente,
                     'parent_id': product_category.id,
                     'code_prefix': partner.nome_curto_cliente,
-                }).id
-            })
+                })
 
-        return partner
+                partner.write({'categoria_produto_id': new_category.id})
