@@ -22,10 +22,10 @@
                                 <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PRAZO DE ENTREGA</th>
                                 <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FRETE</th>
                                 <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CONDIÇÃO</th>
-                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PIS <br><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COFINS <br><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ICMS <br><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">IPI <br><span style="color: limegreen; font-style: italic;">A INCLUIR</span><</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PIS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COFINS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ICMS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">IPI <br/><span style="color: red; font-style: italic;">A INCLUIR</span></th>
                                 <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">TOTAL DA PROPOSTA</th>
                             </tr>
                         </thead>
@@ -170,7 +170,7 @@
                     </div>
                 </t>
             </div>
-            <br>
+            <br/>
         </xpath>
  
         <xpath expr="//div[@name='so_total_summary']" position="attributes">
