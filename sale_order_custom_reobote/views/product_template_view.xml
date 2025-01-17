@@ -8,98 +8,119 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='general_information']" position="after">
                     <page name="reobote_info" string="Especificações">
-                    <group>
                         <group>
-                        <label for="codigo_cliente"/>
-                        <field name="codigo_cliente"/>
-                        <label for="espessura"/><field name="espessura"/>
-                        <label for="perfil_externo"/><field name="perfil_externo"/>
-                        <label for="perfil_interno"/><field name="perfil_interno"/>
-                        <group col="3" style="width: 100%">
                             <group>
-                            <div style="width: 10em;">
-                                <label for="diametro_externo"/><field name="diametro_externo"/>
-                            </div>
+                                <label for="codigo_cliente"/>
+                                <field name="codigo_cliente" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="espessura"/>
+                                <field name="espessura" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <group col="4" style="width: 100%">
+                                    <div style="width: 6em;">
+                                        <label for="esp_tolerancia_menor" string="Tol. E-"/>
+                                        <field name="esp_tolerancia_menor" options="{'no_create': True, 'no_create_edit': True}"/>
+                                    </div>
+                                    <div style="width: 6em;">
+                                        <label for="esp_tolerancia_maior" string="Tol. E+"/>
+                                        <field name="esp_tolerancia_maior" options="{'no_create': True, 'no_create_edit': True}"/>
+                                    </div>
+                                </group>
+                                <group col="3" style="width: 100%">
+                                    <group>
+                                        <div style="width: 10em;">
+                                            <label for="diametro_externo"/>
+                                            <field name="diametro_externo" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="dext_tolerancia_menor" string="Tol. DE -"/>
+                                            <field name="dext_tolerancia_menor" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="dext_tolerancia_maior" string="Tol. DE +"/>
+                                            <field name="dext_tolerancia_maior" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group col="3" style="width: 100%">
+                                    <group>
+                                        <div style="width: 10em;">
+                                            <label for="diametro_interno"/>
+                                            <field name="diametro_interno" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="dint_tolerancia_menor" string="Tol. DI -"/>
+                                            <field name="dint_tolerancia_menor" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="dint_tolerancia_maior" string="Tol. DI +"/>
+                                            <field name="dint_tolerancia_maior" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group col="4" style="width: 100%">
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="variacao" string="Tipo"/>
+                                            <field name="variacao" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 8em;">
+                                            <label for="comprimento"/>
+                                            <field name="comprimento" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="comp_tolerancia_menor" string="Tol. C-"/>
+                                            <field name="comp_tolerancia_menor" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <div style="width: 6em;">
+                                            <label for="comp_tolerancia_maior" string="Tol. C+"/>
+                                            <field name="comp_tolerancia_maior" options="{'no_create': True, 'no_create_edit': True}"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <label for="perfil_externo"/>
+                                <field name="perfil_externo" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="perfil_interno"/>
+                                <field name="perfil_interno" options="{'no_create': True, 'no_create_edit': True}"/>
                             </group>
-                            
                             <group>
-                                <div style="width: 6em;">
-                                <label for="dext_tolerancia_menor" string="Tol. DE -"/>
-                                <field name="dext_tolerancia_menor"/>
-                                </div>
+                                <label for="norma"/>
+                                <field name="norma" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="materia_prima"/>
+                                <field name="materia_prima" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="aco"/>
+                                <field name="aco" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="fornecimento"/>
+                                <field name="fornecimento" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="superficie"/>
+                                <field name="superficie" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="faces"/>
+                                <field name="faces" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <label for="embalagem"/>
+                                <field name="embalagem" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <group/>
                             </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="dext_tolerancia_maior" string="Tol. DE +"/>
-                                <field name="dext_tolerancia_maior"/>
-                                </div>
-                            </group>
-                        </group>
-                        <group col="3" style="width: 100%">
-                            <group>
-                            <div style="width: 10em;">
-                                <label for="diametro_interno"/><field name="diametro_interno"/>
-                            </div>
-                            </group>
-                            
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="dint_tolerancia_menor" string="Tol. DI -"/>
-                                <field name="dint_tolerancia_menor"/>
-                                </div>
-                            </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="dint_tolerancia_maior" string="Tol. DI +"/>
-                                <field name="dint_tolerancia_maior"/>
-                                </div>
-                            </group>
-                        </group>
-                        <group col="4" style="width: 100%">
-                            <group>
-                            <div style="width: 6em;">
-                                <label for="variacao" string="Tipo"/><field name="variacao"/>
-                            </div>
-                            </group>
-                            <group>
-                            <div style="width: 8em;">
-                                <label for="comprimento"/><field name="comprimento"/>
-                            </div>
-                            </group>
-                            
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="comp_tolerancia_menor" string="Tol.C-"/>
-                                <field name="comp_tolerancia_menor"/>
-                                </div>
-                            </group>
-                            <group>
-                                <div style="width: 6em;">
-                                <label for="comp_tolerancia_maior" string="Tol.C+"/>
-                                <field name="comp_tolerancia_maior"/>
-                                </div>
-                            </group>
-                        </group>
                         </group>
                         <group>
-                        <label for="norma"/><field name="norma"/>
-                        <label for="materia_prima"/><field name="materia_prima"/>
-                        <label for="aco"/><field name="aco"/>
-                        <label for="fornecimento"/><field name="fornecimento"/>
-                        <label for="superficie"/><field name="superficie"/>
-                        <label for="faces"/><field name="faces"/>
-                        <label for="embalagem"/><field name="embalagem"/>
-                        <group/>
+                            <group>
+                               <field name="obs"/>
+                            </group>
+                            <group>
+                                <field name="concatenado" widget="text" placeholder="Insira as especificações separadas por '|'"/>
+                            </group>
                         </group>
-                    </group>
-                    <group>
-                        <group>
-                           <field name="obs"/>
-                        </group>
-                        <group>
-                            <field name="concatenado" onchange="1"/>
-                        </group>  
-                    </group>
                     </page>
                 </xpath>
             </field>
