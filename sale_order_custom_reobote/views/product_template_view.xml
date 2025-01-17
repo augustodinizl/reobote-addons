@@ -12,9 +12,11 @@
                             <group>
                                 <label for="codigo_cliente"/>
                                 <field name="codigo_cliente"/>
-                                <label for="espessura"/>
-                                <field name="espessura"/>
-                                <group col="4" style="width: 100%">
+                                <group col="3" style="width: 100%">
+                                    <div style="width: 10em;">
+                                        <label for="espessura"/>
+                                        <field name="espessura"/>
+                                    </div>
                                     <div style="width: 6em;">
                                         <label for="esp_tolerancia_menor" string="Tol. E-"/>
                                         <field name="esp_tolerancia_menor"/>
