@@ -70,7 +70,7 @@
                         <tbody>
                             <t t-foreach="doc.order_line" t-as="line">
                               <tr>
-                                <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line_index"/></td>
+                                <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line_index + 1"/></td>
                                 <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.codigo_cliente.name.upper()"/></td>
                                 <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.default_code.upper()"/></td>
                                 <td colspan="9" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.name.upper()"/></td>
