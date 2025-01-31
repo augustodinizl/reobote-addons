@@ -13,8 +13,8 @@
     'depends': ['mrp'],
     'data': [
         'security/ir.model.access.csv',
-        'views/product_template_view.xml', 
-        'views/report_saleorder_document.xml',
+        'views/work_order_form.xml', 
+        #'views/report_saleorder_document.xml',
     ],
     'installable': True,
     'auto_install': False,
