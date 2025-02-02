@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <template id="report_mrporder_document_custom" inherit_id="mrp.report_mrporder">
+      <xpath expr="//div[@class='page']" position="replace">
+        <div class="page">
+          <h2>ORDEM DE FABRICAÇÃO</h2>
+
+          <!--<t t-if="doc.sequenciamento"> 
+            <p>SEQUENCIAMENTO: <t t-esc="doc.sequenciamento"/></p> 
+          </t>-->
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ORDEM PRODUÇÃO</th>
+                <th>PEDIDO VENDA</th>
+                <th>PRAZO FABRICAÇÃO</th>
+                <th>CLIENTE</th>
+                <th>QTDE.</th>
+                <th>UN.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><t t-esc="doc.name"/></td>
+                <td><t t-esc="doc.origin"/></td>
+                <td><t t-esc="doc.date_planned_start" t-options='{"widget": "datetime"}'/></td>
+                <td><t t-esc="doc.partner_id.name"/></td>
+                <td><t t-esc="doc.product_qty"/></td>
+                <td><t t-esc="doc.product_uom_id.name"/></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>OBSERVAÇÕES</h3> 
+
+          <p><!--<t t-esc="doc.observacao"/>--></p> 
+
+          <h3>1 SEPARAÇÃO DE MATERIAL PARA TUBOS</h3>
+          <h3>2 TRATAMENTO TÉRMICO PARA TREFILAÇÃO</h3>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>PRODUTO</th>
+                <th>MATÉRIA-PRIMA</th>
+                <th>LOTE MP</th>
+                <th>LOTE?</th>
+                <th>QUÍMICA?</th>
+                <th>PROCESSO?</th>
+                <th>REDUÇÃO</th>
+                <th>PERDAS (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><t t-esc="doc.product_id.name"/></td>
+                <td><t t-esc="doc.bom_id.product_tmpl_id.name"/></td> 
+                <td><t t-esc="doc.raw_material_production_id.name"/></td> 
+                <td>OK</td>
+                <td>OK</td>
+                <td>OK</td>
+                <td>47,88%</td> 
+                <td>12,00%</td> 
+              </tr>
+            </tbody>
+          </table>
+
+
+          <t t-foreach="doc.workorder_ids" t-as="workorder">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>REQUISITO</th>
+                  <th>CONTROLE</th>
+                  <th>FREQUÊNCIA</th>
+                  <th>REFERÊNCIA</th>
+                  <th>ENCONTRADO</th>
+                  <th>INSTRUMENTO</th>
+                  <th>DATA/RESPONS.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><t t-esc="workorder.requisito"/></td>
+                  <td><t t-esc="workorder.controle"/></td>
+                  <td><t t-esc="workorder.frequencia"/></td>
+                  <td><t t-esc="workorder.referencia"/></td>
+                  <td><t t-esc="workorder.encontrado"/></td>
+                  <td><t t-esc="workorder.instrumento"/></td>
+                  <td></td> 
+                </tr>
+                </tbody>
+            </table>
+          </t>
+
+        </div>
+      </xpath>
+    </template>
+  </data>
+</odoo>
