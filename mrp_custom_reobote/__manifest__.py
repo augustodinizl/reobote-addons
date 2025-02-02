@@ -14,6 +14,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/work_order_form.xml', 
+        'views/report_mrporder.xml',
         #'views/report_saleorder_document.xml',
     ],
     'installable': True,
