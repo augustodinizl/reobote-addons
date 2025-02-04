@@ -130,7 +130,7 @@
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td style="padding: 8px;"><t t-esc="line3.requisito.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.requisitos.name"/></td>
                                       <td style="padding: 8px;"><t t-esc="line3.controle.name"/></td>
                                       <td style="padding: 8px;"><t t-esc="line3.frequencia.name"/></td>
                                       <td style="padding: 8px;"><t t-esc="line3.referencia.name"/></td>
