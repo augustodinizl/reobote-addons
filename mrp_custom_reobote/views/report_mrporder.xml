@@ -1,102 +1,168 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-  <data>
-    <template id="report_mrporder_document_custom" inherit_id="mrp.report_mrporder">
-      <xpath expr="//div[@class='page']" position="replace">
+<data inherit_id="mrp.report_mrporder">
+    <xpath expr="//div[@class='page']" position="replace">
         <div class="page">
-          <h2>ORDEM DE FABRICAÇÃO</h2>
-
-          <!--<t t-if="doc.sequenciamento"> 
-            <p>SEQUENCIAMENTO: <t t-esc="doc.sequenciamento"/></p> 
-          </t>-->
-
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>ORDEM PRODUÇÃO</th>
-                <th>PEDIDO VENDA</th>
-                <th>PRAZO FABRICAÇÃO</th>
-                <th>CLIENTE</th>
-                <th>QTDE.</th>
-                <th>UN.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><t t-esc="doc.name"/></td>
-                <td><t t-esc="doc.origin"/></td>
-                <td><t t-esc="doc.date_planned_start" t-options='{"widget": "datetime"}'/></td>
-                <td><t t-esc="doc.partner_id.name"/></td>
-                <td><t t-esc="doc.product_qty"/></td>
-                <td><t t-esc="doc.product_uom_id.name"/></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>OBSERVAÇÕES</h3> 
-
-          <p><!--<t t-esc="doc.observacao"/>--></p> 
-
-          <h3>1 SEPARAÇÃO DE MATERIAL PARA TUBOS</h3>
-          <h3>2 TRATAMENTO TÉRMICO PARA TREFILAÇÃO</h3>
-
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>PRODUTO</th>
-                <th>MATÉRIA-PRIMA</th>
-                <th>LOTE MP</th>
-                <th>LOTE?</th>
-                <th>QUÍMICA?</th>
-                <th>PROCESSO?</th>
-                <th>REDUÇÃO</th>
-                <th>PERDAS (%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><t t-esc="doc.product_id.name"/></td>
-                <td><t t-esc="doc.bom_id.product_tmpl_id.name"/></td> 
-                <td><t t-esc="doc.raw_material_production_id.name"/></td> 
-                <td>OK</td>
-                <td>OK</td>
-                <td>OK</td>
-                <td>47,88%</td> 
-                <td>12,00%</td> 
-              </tr>
-            </tbody>
-          </table>
-
-
-          <t t-foreach="doc.workorder_ids" t-as="workorder">
-            <table class="table table-bordered">
-              <thead>
+          <div class="col-12" style="padding-bottom: 16px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
                 <tr>
-                  <th>REQUISITO</th>
-                  <th>CONTROLE</th>
-                  <th>FREQUÊNCIA</th>
-                  <th>REFERÊNCIA</th>
-                  <th>ENCONTRADO</th>
-                  <th>INSTRUMENTO</th>
-                  <th>DATA/RESPONS.</th>
+                    <td style="width: 80%; vertical-align: top;">
+                        <table style="width: 100%; font-size: 12px;">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center; font-weight: bold; padding: 8px;">
+                                        <h2>ORDEM DE FABRICAÇÃO</h2>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="width: 100%; font-size: 10px; padding-top: 12px;">
+                            <thead>
+                                <tr style="background-color: #d3d3d3;">
+                                    <th style="padding: 8px;">ORDEM PRODUÇÃO</th>
+                                    <th style="padding: 8px;">PEDIDO VENDA</th>
+                                    <th style="padding: 8px;">PRAZO FABRICAÇÃO</th>
+                                    <th style="padding: 8px;">CLIENTE</th>
+                                    <th style="padding: 8px;">QTDE.</th>
+                                    <th style="padding: 8px;">UN.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.name"/></td>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.origin"/></td>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.date_planned_start" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></td>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.partner_id.name"/></td>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.product_qty"/></td>
+                                    <td style="text-align: center; padding: 8px;"><t t-esc="o.product_uom_id.name"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="width: 20%; vertical-align: top;">
+                        <table style="width: 100%; font-size: 10px;">
+                            <tbody>
+                                <tr>
+                                    <td style="background-color: #d3d3d3; text-align: center; font-weight: bold; padding: 8px;">
+                                        SEQUENCIAMENTO
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="heigth: 100%;">
+                                      <span> </span>
+                                      <span> </span>
+                                      <span> </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><t t-esc="workorder.requisito"/></td>
-                  <td><t t-esc="workorder.controle"/></td>
-                  <td><t t-esc="workorder.frequencia"/></td>
-                  <td><t t-esc="workorder.referencia"/></td>
-                  <td><t t-esc="workorder.encontrado"/></td>
-                  <td><t t-esc="workorder.instrumento"/></td>
-                  <td></td> 
-                </tr>
+            </table>
+          </div>
+          <div class="col-12" style="padding-bottom: 16px;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed;">
+                  <thead>
+                      <tr style="background-color: #d3d3d3;">
+                          <th style="padding: 8px; text-align: center; width: 26%;">PRODUTO</th>
+                          <th style="text-align: center; width: 26%;">MATÉRIA-PRIMA</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">LOTE MP</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">LOTE?</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">QUÍMICA?</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">PROCESSO?</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">REDUÇÃO</th>
+                          <th style="text-align: center; width: 8%; white-space: nowrap;">PERDAS (%)</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style="padding: 8px; vertical-align: top;">
+                              <t t-esc="o.product_id.name"/>
+                          </td>
+                          <td style="padding: 8px; vertical-align: top;">
+                              <t t-esc="o.bom_id.product_tmpl_id.name"/>
+                          </td>
+                          <td style="padding: 8px;">LF-62562</td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
+                          <td style="padding: 8px; text-align: center;">47,88%</td>
+                          <td style="padding: 8px; text-align: center;">12,00%</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="col-12" style="padding-bottom: 16px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                <thead>
+                    <tr>
+                        <td style="padding: 8px; background-color: #d3d3d3; text-align: center;">
+                            <b>OBSERVAÇÕES</b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="min-height: 90px;">
+                            teste
+                        </td>
+                    </tr>
                 </tbody>
             </table>
-          </t>
+          </div>
+
+        <t t-foreach="o.workorder_ids" t-as="workorder">
+              <div class="col-12" style="padding-bottom: 16px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
+                    <tr>
+                        <td style="width: 80%; vertical-align: top;">
+                            <table style="width: 100%; font-size: 10px; padding-top: 12px; table-layout: fixed;">
+                                <thead>
+                                    <tr style="background-color: #d3d3d3;">
+                                        <th style="padding: 8px; text-align: center; width: 16%; white-space: nowrap;">REQUISITO</th>
+                                        <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">CONTROLE</th>
+                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">FREQUÊNCIA</th>
+                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">REFERÊNCIA</th>
+                                        <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">ENCONTRADO</th>
+                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">INSTRUMENTO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px;"><t t-esc="requisito"/></td>
+                                        <td style="padding: 8px;"><t t-esc="controle"/></td>
+                                        <td style="padding: 8px;"><t t-esc="frequencia"/></td>
+                                        <td style="padding: 8px;"><t t-esc="referencia"/></td>
+                                        <td style="padding: 8px;"><t t-esc="encontrado"/></td>
+                                        <td style="padding: 8px;"><t t-esc="instrumento"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px;"><t t-esc="obs"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td style="width: 20%; vertical-align: top;">
+                            <table style="width: 100%; font-size: 10px;">
+                                <tbody>
+                                    <tr>
+                                        <td style="background-color: #d3d3d3; text-align: center; font-weight: bold; padding: 8px;">
+                                            DATA/RESPONS 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="heigth: 100%;">
+                                          <span> </span>
+                                          <span> </span>
+                                          <span> </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+              </div>
+        </t>
 
         </div>
-      </xpath>
-    </template>
-  </data>
-</odoo>
+    </xpath>
+</data>
