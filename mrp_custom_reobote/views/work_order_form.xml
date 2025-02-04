@@ -20,6 +20,9 @@
                                 <field name="instrumento"/>
                             </group>
                         </group>
+                        <group>
+                           <field name="obs"/>
+                        </group>
                     </page>
                 </xpath>
             </field>

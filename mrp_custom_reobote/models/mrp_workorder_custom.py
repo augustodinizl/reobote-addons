@@ -10,7 +10,7 @@ class MrpWorkorder(models.Model):
     referencia = fields.Many2one('reobote.mrp.custom', string="Referência", domain=[('campo', '=', 'referencia')])
     encontrado = fields.Many2one('reobote.mrp.custom', string="Encontrado", domain=[('campo', '=', 'encontrado')])
     instrumento = fields.Many2one('reobote.mrp.custom', string="Instrumento", domain=[('campo', '=', 'instrumento')])
-    obs = fields.Text(string="Observações")
+    obs = fields.Html(string="Observações")
     
     def _update_reobote_mrp_custom_campo(self, record, fields_to_update):
         """Atualiza o campo 'campo' na tabela reobote.mrp.custom."""
