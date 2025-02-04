@@ -1,7 +1,6 @@
 from odoo import models, fields, api
 
-class MrpRoutingWorkcenterReobote(models.Model):
-    _name = 'mrp.routing.workcenter.reobote'
+class MrpRoutingWorkcenter(models.Model):
     _inherit = 'mrp.routing.workcenter'
 
     requisitos = fields.Many2one('reobote.mrp.custom', string="Requisitos", domain=[('campo', '=', 'requisitos')])
