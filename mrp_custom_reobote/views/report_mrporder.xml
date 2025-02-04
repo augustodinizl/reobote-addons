@@ -138,7 +138,7 @@
                                       <td style="padding: 8px;"><t t-esc="line3.instrumento.name"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="padding: 8px;"><span t-esc="line3.obs"/></td>
+                                      <td colspan="6" style="padding: 8px;"><span t-esc="line3.obs"/></td>
                                   </tr>
                               </tbody>
                           </table>
