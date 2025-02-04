@@ -9,7 +9,7 @@
                 <xpath expr="//page[@name='worksheet']/group[last()]" position="after">
                     <group string="Additional Information">
                         <group>  
-                            <field name="requisito"/>
+                            <field name="requisitos"/>
                             <field name="controle"/>
                             <field name="frequencia"/>
                         </group>
