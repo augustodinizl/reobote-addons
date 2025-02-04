@@ -112,7 +112,7 @@
             </table>
           </div>
 
-          <t t-foreach="o.workorder_ids" t-as="workorder">
+          <t t-foreach="o.workorder_ids" t-as="line3">
             <div class="col-12" style="padding-bottom: 16px;">
               <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
                   <tr>
@@ -130,12 +130,15 @@
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td style="padding: 8px;"><t t-esc="requisito"/></td>
-                                      <td style="padding: 8px;"><t t-esc="controle"/></td>
-                                      <td style="padding: 8px;"><t t-esc="frequencia"/></td>
-                                      <td style="padding: 8px;"><t t-esc="referencia"/></td>
-                                      <td style="padding: 8px;"><t t-esc="encontrado"/></td>
-                                      <td style="padding: 8px;"><t t-esc="instrumento"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.requisito.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.controle.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.frequencia.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.referencia.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.encontrado.name"/></td>
+                                      <td style="padding: 8px;"><t t-esc="line3.instrumento.name"/></td>
+                                  </tr>
+                                  <tr>
+                                      <td style="padding: 8px;"><span t-esc="line3.obs"/></td>
                                   </tr>
                               </tbody>
                           </table>
