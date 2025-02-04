@@ -1,5 +1,8 @@
-<data inherit_id="mrp.report_mrporder">
-    <xpath expr="//div[@class='page']" position="replace">
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <template id="report_mrporder_document_custom" inherit_id="mrp.report_mrporder">
+      <xpath expr="//div[@class='page']" position="replace">
         <div class="page">
           <div class="col-12" style="padding-bottom: 16px;">
             <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
@@ -109,60 +112,59 @@
             </table>
           </div>
 
-        <t t-foreach="o.workorder_ids" t-as="workorder">
-              <div class="col-12" style="padding-bottom: 16px;">
-                <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
-                    <tr>
-                        <td style="width: 80%; vertical-align: top;">
-                            <table style="width: 100%; font-size: 10px; padding-top: 12px; table-layout: fixed;">
-                                <thead>
-                                    <tr style="background-color: #d3d3d3;">
-                                        <th style="padding: 8px; text-align: center; width: 16%; white-space: nowrap;">REQUISITO</th>
-                                        <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">CONTROLE</th>
-                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">FREQUÊNCIA</th>
-                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">REFERÊNCIA</th>
-                                        <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">ENCONTRADO</th>
-                                        <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">INSTRUMENTO</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 8px;"><t t-esc="requisito"/></td>
-                                        <td style="padding: 8px;"><t t-esc="controle"/></td>
-                                        <td style="padding: 8px;"><t t-esc="frequencia"/></td>
-                                        <td style="padding: 8px;"><t t-esc="referencia"/></td>
-                                        <td style="padding: 8px;"><t t-esc="encontrado"/></td>
-                                        <td style="padding: 8px;"><t t-esc="instrumento"/></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 8px;"><t t-esc="obs"/></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <td style="width: 20%; vertical-align: top;">
-                            <table style="width: 100%; font-size: 10px;">
-                                <tbody>
-                                    <tr>
-                                        <td style="background-color: #d3d3d3; text-align: center; font-weight: bold; padding: 8px;">
-                                            DATA/RESPONS 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="heigth: 100%;">
-                                          <span> </span>
-                                          <span> </span>
-                                          <span> </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-              </div>
-        </t>
+          <t t-foreach="o.workorder_ids" t-as="workorder">
+            <div class="col-12" style="padding-bottom: 16px;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
+                  <tr>
+                      <td style="width: 80%; vertical-align: top;">
+                          <table style="width: 100%; font-size: 10px; padding-top: 12px; table-layout: fixed;">
+                              <thead>
+                                  <tr style="background-color: #d3d3d3;">
+                                      <th style="padding: 8px; text-align: center; width: 16%; white-space: nowrap;">REQUISITO</th>
+                                      <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">CONTROLE</th>
+                                      <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">FREQUÊNCIA</th>
+                                      <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">REFERÊNCIA</th>
+                                      <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">ENCONTRADO</th>
+                                      <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">INSTRUMENTO</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td style="padding: 8px;"><t t-esc="requisito"/></td>
+                                      <td style="padding: 8px;"><t t-esc="controle"/></td>
+                                      <td style="padding: 8px;"><t t-esc="frequencia"/></td>
+                                      <td style="padding: 8px;"><t t-esc="referencia"/></td>
+                                      <td style="padding: 8px;"><t t-esc="encontrado"/></td>
+                                      <td style="padding: 8px;"><t t-esc="instrumento"/></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </td>
+                      <td style="width: 20%; vertical-align: top;">
+                          <table style="width: 100%; font-size: 10px;">
+                              <tbody>
+                                  <tr>
+                                      <td style="background-color: #d3d3d3; text-align: center; font-weight: bold; padding: 8px;">
+                                          DATA/RESPONS 
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td style="heigth: 100%;">
+                                        <span> </span>
+                                        <span> </span>
+                                        <span> </span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </td>
+                  </tr>
+              </table>
+            </div>
+          </t>
 
         </div>
-    </xpath>
-</data>
+      </xpath>
+    </template>
+  </data>
+</odoo>
