@@ -3,6 +3,8 @@ from odoo import models, fields, api
 class MrpRoutingWorkcenterReobote(models.Model):
     _inherit = 'mrp.routing.workcenter'
 
+    manytomany = fields.Many2many('reobote.mrp.many', string="Reobote")
+    
     requisitos = fields.Many2one('reobote.mrp.custom', string="Requisitos", domain=[('campo', '=', 'requisitos')])
     controle = fields.Many2one('reobote.mrp.custom', string="Controle", domain=[('campo', '=', 'controle')])
     frequencia = fields.Many2one('reobote.mrp.custom', string="Frequência", domain=[('campo', '=', 'frequencia')])
