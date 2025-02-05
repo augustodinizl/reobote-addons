@@ -81,9 +81,9 @@
                               <t t-esc="o.product_id.name"/>
                           </td>
                           <td style="padding: 8px; vertical-align: top;">
-                              <t t-esc="o.bom_id.product_tmpl_id.name"/>
+                              <t t-esc="o.move_raw_ids[0].product_id.name"/>
                           </td>
-                          <td style="padding: 8px;">LF-62562</td>
+                          <td style="padding: 8px;"><t t-esc="o.move_raw_ids[0].lot_ids[0].name"/></td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
