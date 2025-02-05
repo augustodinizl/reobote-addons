@@ -120,6 +120,14 @@
                           <table style="width: 100%; font-size: 10px; padding-top: 12px; table-layout: fixed;">
                               <thead>
                                   <tr style="background-color: #d3d3d3;">
+                                      <th style="padding: 8px; text-align: center; width: 5%; white-space: nowrap;"><t t-esc="line3.sequence"></th>
+                                      <th style="padding: 8px; text-align: left; width: 95%; white-space: nowrap;"><t t-esc="line3.name"></th>
+                                  <tr/>
+                              </thead>
+                          </table>
+                          <table style="width: 100%; font-size: 10px; padding-top: 12px; table-layout: fixed;">
+                              <thead>
+                                  <tr style="background-color: #d3d3d3;">
                                       <th style="padding: 8px; text-align: center; width: 16%; white-space: nowrap;">REQUISITO</th>
                                       <th style="padding: 8px; text-align: center; width: 12%; white-space: nowrap;">CONTROLE</th>
                                       <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">FREQUÊNCIA</th>
