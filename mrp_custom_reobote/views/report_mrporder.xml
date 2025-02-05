@@ -128,19 +128,21 @@
                                       <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">INSTRUMENTO</th>
                                   </tr>
                               </thead>
-                              <tbody>
-                                  <tr>
-                                      <td style="padding: 8px;"><t t-esc="line3.requisitos.name"/></td>
-                                      <td style="padding: 8px;"><t t-esc="line3.controle.name"/></td>
-                                      <td style="padding: 8px;"><t t-esc="line3.frequencia.name"/></td>
-                                      <td style="padding: 8px;"><t t-esc="line3.referencia.name"/></td>
-                                      <td style="padding: 8px;"><t t-esc="line3.encontrado.name"/></td>
-                                      <td style="padding: 8px;"><t t-esc="line3.instrumento.name"/></td>
-                                  </tr>
-                                  <tr>
-                                      <td colspan="6" style="padding: 8px;"><span t-esc="line3.obs"/></td>
-                                  </tr>
-                              </tbody>
+                                  <tbody>
+                                        <t t-foreach="line3.manytomany" t-as="linha">
+                                            <tr>
+                                                <td style="padding: 8px;"><t t-esc="linha.requisitos.name"/></td>
+                                                <td style="padding: 8px;"><t t-esc="linha.controle.name"/></td>
+                                                <td style="padding: 8px;"><t t-esc="linha.frequencia.name"/></td>
+                                                <td style="padding: 8px;"><t t-esc="linha.referencia.name"/></td>
+                                                <td style="padding: 8px;"><t t-esc="linha.encontrado.name"/></td>
+                                                <td style="padding: 8px;"><t t-esc="linha.instrumento.name"/></td>
+                                            </tr>
+                                        </t>
+                                        <tr>
+                                            <td colspan="6" style="padding: 8px;"><span t-esc="line3.obs"/></td>
+                                        </tr>
+                                    </tbody>
                           </table>
                       </td>
                       <td style="width: 20%; vertical-align: top;">
