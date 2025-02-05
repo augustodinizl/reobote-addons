@@ -9,7 +9,16 @@
                 <xpath expr="//sheet/notebook" position="inside">
                     <page name="reobote_mrp_info" string="Informações Reobote">
                         <group>
-                            <field name="manytomany" widget="many2many_list"/>
+                            <field name="manytomany" widget="many2many_list">
+                                <tree string="Itens Reobote">
+                                    <field name="requisitos"/>
+                                    <field name="controle"/>
+                                    <field name="frequencia"/>
+                                    <field name="referencia"/>
+                                    <field name="encontrado"/>
+                                    <field name="instrumento"/>
+                                </tree>
+                            </field>
                         </group>
                         <group>
                             <group string="Detalhes">
