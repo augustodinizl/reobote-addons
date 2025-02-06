@@ -16,6 +16,7 @@
         'views/work_order_form.xml', 
         'views/report_mrporder.xml',
         'views/routing_reobote.xml',
+        'views/mrp_production_form.xml',
     ],
     'installable': True,
     'auto_install': False,
