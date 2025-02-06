@@ -145,23 +145,40 @@
                                       <th style="padding: 8px; text-align: center; width: 10%; white-space: nowrap;">INSTRUMENTO</th>
                                   </tr>
                               </thead>
-                                  <tbody>
-                                        <t t-foreach="line3.manytomany" t-as="linha">
-                                            <tr>
-                                                <td style="padding: 8px;"><t t-esc="linha.requisitos.name"/></td>
-                                                <td style="padding: 8px;"><t t-esc="linha.controle.name"/></td>
-                                                <td style="padding: 8px;"><t t-esc="linha.frequencia.name"/></td>
-                                                <td style="padding: 8px;"><t t-esc="linha.referencia.name"/></td>
-                                                <td style="padding: 8px;"><t t-esc="linha.encontrado.name"/></td>
-                                                <td style="padding: 8px;"><t t-esc="linha.instrumento.name"/></td>
-                                            </tr>
-                                        </t>
-                                        <tr>
-                                            <td colspan="6" style="padding: 8px;"><span t-esc="line3.obs"/></td>
-                                            <span> </span>
-                                            <span> </span>
+                              <tbody>
+                                  <t t-foreach="line3.manytomany" t-as="linha">
+                                      <tr>
+                                          <td style="padding: 8px;"><t t-esc="linha.requisitos.name"/></td>
+                                          <td style="padding: 8px;"><t t-esc="linha.controle.name"/></td>
+                                          <td style="padding: 8px;"><t t-esc="linha.frequencia.name"/></td>
+                                          <td style="padding: 8px;"><t t-esc="linha.referencia.name"/></td>
+                                          <td style="padding: 8px;"><t t-esc="linha.encontrado.name"/></td>
+                                          <td style="padding: 8px;"><t t-esc="linha.instrumento.name"/></td>
                                         </tr>
-                                    </tbody>
+                                  </t>
+                                  <t t-if="line3.obs">
+                                      <tr>
+                                        <td colspan="6" style="padding: 8px; vertical-align: top;">
+                                            <span t-esc="line3.obs" style="display: block;"/>  <t t-set="obs_text" t-value="line3.obs.strip()"/>
+                                            <t t-set="num_lines" t-value="obs_text.count('\n') + 1"/>
+                                            <t t-if="num_lines &lt; 3">
+                                                <t t-foreach="range(3 - num_lines)" t-as="i">
+                                                    <span style="color: white;">.</span><br/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                       </tr>
+                                  </t>
+                                  <t t-else="">
+                                    <tr>
+                                      <td colspan="6" style="padding: 8px; vertical-align: top; min-height: 60px;">
+                                          <span style="color: white;">.</span><br/>
+                                          <span style="color: white;">.</span><br/>
+                                          <span style="color: white;">.</span><br/>
+                                      </td>
+                                    </tr>
+                                </t>
+                            </tbody>
                           </table>
                       </td>
                       <td style="width: 20%; vertical-align: top;">
