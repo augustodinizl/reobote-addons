@@ -3,11 +3,11 @@ from odoo import models, fields, api
 class MrpProductionReobote(models.Model):
     _inherit = 'mrp.production'
 
-    lote_ok = fields.Many2one('reobote.mrp.custom', string="LOTE?", domain=[('campo', '=', 'requisitos')])
-    quimica_ok = fields.Many2one('reobote.mrp.custom', string="QUÍMICA?", domain=[('campo', '=', 'controle')])
-    processo_ok = fields.Many2one('reobote.mrp.custom', string="PROCESSO?", domain=[('campo', '=', 'frequencia')])
-    reducao = fields.Many2one('reobote.mrp.custom', string="REDUÇÃO", domain=[('campo', '=', 'referencia')])
-    perdas = fields.Many2one('reobote.mrp.custom', string="PERDAS", domain=[('campo', '=', 'encontrado')])
+    lote_ok = fields.Many2one('reobote.mrp.custom', string="LOTE?", domain=[('campo', '=', 'lote')])
+    quimica_ok = fields.Many2one('reobote.mrp.custom', string="QUÍMICA?", domain=[('campo', '=', 'quimica')])
+    processo_ok = fields.Many2one('reobote.mrp.custom', string="PROCESSO?", domain=[('campo', '=', 'processo')])
+    reducao = fields.Many2one('reobote.mrp.custom', string="REDUÇÃO", domain=[('campo', '=', 'reducao')])
+    perdas = fields.Many2one('reobote.mrp.custom', string="PERDAS", domain=[('campo', '=', 'perdas')])
     obs = fields.Html(string="Observações")
 
     def _update_reobote_mrp_custom_campo(self, record, fields_to_update):
