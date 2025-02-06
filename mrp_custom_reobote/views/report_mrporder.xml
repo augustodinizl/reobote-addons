@@ -91,11 +91,11 @@
                                 <span>N/A</span>  
                             </t>
                           </td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.lote_ok"/></td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.quimica_ok"/></td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.processo_ok"/>></td>
-                          <td style="padding: 8px; text-align: center;"><t t-esc="o.reducao"/> %</td>
-                          <td style="padding: 8px; text-align: center;"><t t-esc="o.perdas"/> %</td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.lote_ok.name"/></td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.quimica_ok.name"/></td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.processo_ok.name"/>></td>
+                          <td style="padding: 8px; text-align: center;"><t t-esc="o.reducao.name"/> %</td>
+                          <td style="padding: 8px; text-align: center;"><t t-esc="o.perdas.name"/> %</td>
                       </tr>
                   </tbody>
               </table>
