@@ -159,7 +159,7 @@
                                         <tr>
                                             <td colspan="6" style="padding: 8px;"><span t-esc="line3.obs"/></td>
                                             <span> </span>
-                                            <span> </span
+                                            <span> </span>
                                         </tr>
                                     </tbody>
                           </table>
