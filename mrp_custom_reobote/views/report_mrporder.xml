@@ -83,7 +83,14 @@
                           <td style="padding: 8px; vertical-align: top;">
                               <t t-esc="o.move_raw_ids[0].product_id.name"/>
                           </td>
-                          <td style="padding: 8px;"><t t-esc="o.move_raw_ids[0].lot_ids[0].name else ''"/></td>
+                          <td style="padding: 8px;">
+                            <t t-if="o.move_raw_ids and o.move_raw_ids[0].lot_ids">
+                                <t t-esc="o.move_raw_ids[0].lot_ids[0].name"/>
+                            </t>
+                            <t t-else="">
+                                <span>N/A</span>  
+                            </t>
+                          </td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.lote_ok"/></td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.quimica_ok"/></td>
                           <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.processo_ok"/>></td>
