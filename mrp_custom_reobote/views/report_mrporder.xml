@@ -113,6 +113,8 @@
                     <tr>
                         <td style="padding: 8px;">
                             <t t-esc="o.obs"/>
+                            <span> </span>
+                            <span> </span>
                         </td>
                     </tr>
                 </tbody>
