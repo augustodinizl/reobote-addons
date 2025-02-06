@@ -84,11 +84,11 @@
                               <t t-esc="o.move_raw_ids[0].product_id.name"/>
                           </td>
                           <td style="padding: 8px;"><t t-esc="o.move_raw_ids[0].lot_ids[0].name else ''"/></td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
-                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;">OK</td>
-                          <td style="padding: 8px; text-align: center;">47,88%</td>
-                          <td style="padding: 8px; text-align: center;">12,00%</td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.lote_ok"/></td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.quimica_ok"/></td>
+                          <td style="padding: 8px; text-align: center; background-color: #ffffcc;"><t t-esc="o.processo_ok"/>></td>
+                          <td style="padding: 8px; text-align: center;"><t t-esc="o.reducao"/> %</td>
+                          <td style="padding: 8px; text-align: center;"><t t-esc="o.perdas"/> %</td>
                       </tr>
                   </tbody>
               </table>
@@ -104,8 +104,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="min-height: 90px;">
-                            teste
+                        <td style="padding: 8px;">
+                            <t t-esc="o.obs"/>
                         </td>
                     </tr>
                 </tbody>
