@@ -52,26 +52,6 @@
                                         </div>
                                     </group>
                                 </group>
-                                 <group col="3" style="width: 100%">
-                                    <group>
-                                        <div style="width: 10em;">
-                                            <label for="diametro_externo_2"/>
-                                            <field name="diametro_externo_2"/>
-                                        </div>
-                                    </group>
-                                    <group>
-                                        <div style="width: 6em;">
-                                            <label for="dext2_tolerancia_menor" string="Tol. DE2 -"/>
-                                            <field name="dext2_tolerancia_menor"/>
-                                        </div>
-                                    </group>
-                                    <group>
-                                        <div style="width: 6em;">
-                                            <label for="dext2_tolerancia_maior" string="Tol. DE2 +"/>
-                                            <field name="dext2_tolerancia_maior"/>
-                                        </div>
-                                    </group>
-                                </group>
                                 <group col="3" style="width: 100%">
                                     <group>
                                         <div style="width: 10em;">
@@ -89,26 +69,6 @@
                                         <div style="width: 6em;">
                                             <label for="dint_tolerancia_maior" string="Tol. DI +"/>
                                             <field name="dint_tolerancia_maior"/>
-                                        </div>
-                                    </group>
-                                </group>
-                                <group col="3" style="width: 100%">
-                                    <group>
-                                        <div style="width: 10em;">
-                                            <label for="diametro_interno_2"/>
-                                            <field name="diametro_interno_2"/>
-                                        </div>
-                                    </group>
-                                    <group>
-                                        <div style="width: 6em;">
-                                            <label for="dint2_tolerancia_menor" string="Tol. DI2 -"/>
-                                            <field name="dint2_tolerancia_menor"/>
-                                        </div>
-                                    </group>
-                                    <group>
-                                        <div style="width: 6em;">
-                                            <label for="dint2_tolerancia_maior" string="Tol. DI2 +"/>
-                                            <field name="dint2_tolerancia_maior"/>
                                         </div>
                                     </group>
                                 </group>
