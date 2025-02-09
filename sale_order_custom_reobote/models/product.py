@@ -7,13 +7,19 @@ class ProductTemplate(models.Model):
     codigo_cliente = fields.Many2one('reobote.custom', string="Código do Cliente", domain=[('campo', '=', 'codigo_cliente')])
     diametro_externo = fields.Many2one('reobote.custom', string="Diâmetro Externo", domain=[('campo', '=', 'diametro_externo')])
     diametro_interno = fields.Many2one('reobote.custom', string="Diâmetro Interno", domain=[('campo', '=', 'diametro_interno')])
+    diametro_externo_2 = fields.Many2one('reobote.custom', string="Diâmetro Externo 2", domain=[('campo', '=', 'diametro_externo_2')])
+    diametro_interno_2 = fields.Many2one('reobote.custom', string="Diâmetro Interno 2", domain=[('campo', '=', 'diametro_interno_2')])
     espessura = fields.Many2one('reobote.custom', string="Espessura", domain=[('campo', '=', 'espessura')])
     comprimento = fields.Many2one('reobote.custom', string="Comprimento", domain=[('campo', '=', 'comprimento')])
     variacao = fields.Many2one('reobote.custom', string="Variação", domain=[('campo', '=', 'variacao')])
     dint_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (DI)", domain=[('campo', '=', 'dint_tolerancia_maior')])
     dint_tolerancia_menor = fields.Many2one('reobote.custom', string="- (DI)", domain=[('campo', '=', 'dint_tolerancia_menor')])
+    dint2_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (DI2)", domain=[('campo', '=', 'dint2_tolerancia_maior')])
+    dint2_tolerancia_menor = fields.Many2one('reobote.custom', string="- (DI2)", domain=[('campo', '=', 'dint2_tolerancia_menor')])
     dext_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (DE)", domain=[('campo', '=', 'dext_tolerancia_maior')])
     dext_tolerancia_menor = fields.Many2one('reobote.custom', string="- (DE)", domain=[('campo', '=', 'dext_tolerancia_menor')])
+    dext2_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (DE2)", domain=[('campo', '=', 'dext2_tolerancia_maior')])
+    dext2_tolerancia_menor = fields.Many2one('reobote.custom', string="- (DE2)", domain=[('campo', '=', 'dext2_tolerancia_menor')])
     comp_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (Comp)", domain=[('campo', '=', 'comp_tolerancia_maior')])
     comp_tolerancia_menor = fields.Many2one('reobote.custom', string="- (Comp)", domain=[('campo', '=', 'comp_tolerancia_menor')])
     esp_tolerancia_maior = fields.Many2one('reobote.custom', string="+ (E)", domain=[('campo', '=', 'esp_tolerancia_maior')])
@@ -54,8 +60,12 @@ class ProductTemplate(models.Model):
     def create(self, vals):
         res = super(ProductTemplate, self).create(vals)
         self._update_reobote_custom_campo(res, [
-            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-            'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
+            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'diametro_externo_2', 'diametro_interno_2', 'espessura',
+            'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+            'dint2_tolerancia_maior', 'dint2_tolerancia_menor', 'dext_tolerancia_maior',
+            'dext_tolerancia_menor', 'dext2_tolerancia_maior', 'dext2_tolerancia_menor',
+            'comp_tolerancia_maior', 'comp_tolerancia_menor', 'esp_tolerancia_maior',
+            'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
             'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
         ])
         return res
@@ -67,8 +77,12 @@ class ProductTemplate(models.Model):
         res = super(ProductTemplate, self).write(vals)
         for record in self:
             self._update_reobote_custom_campo(record, [
-                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-                'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
+                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'diametro_externo_2', 'diametro_interno_2', 'espessura',
+                'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+                'dint2_tolerancia_maior', 'dint2_tolerancia_menor', 'dext_tolerancia_maior',
+                'dext_tolerancia_menor', 'dext2_tolerancia_maior', 'dext2_tolerancia_menor',
+                'comp_tolerancia_maior', 'comp_tolerancia_menor', 'esp_tolerancia_maior',
+                'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
                 'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
             ])
         return res
@@ -76,16 +90,18 @@ class ProductTemplate(models.Model):
     def processar_concatenado(self, vals):
         valores = [v.strip() for v in vals['concatenado'].split('|')]
         campos = [
-            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
+            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'diametro_externo_2', 'diametro_interno_2', 'espessura',
             'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
-            'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
-            'comp_tolerancia_menor','esp_tolerancia_maior', 'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
+            'dint2_tolerancia_maior', 'dint2_tolerancia_menor', 'dext_tolerancia_maior',
+            'dext_tolerancia_menor', 'dext2_tolerancia_maior', 'dext2_tolerancia_menor',
+            'comp_tolerancia_maior', 'comp_tolerancia_menor','esp_tolerancia_maior',
+            'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
             'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
         ]
 
         # Garante que 'valores' tenha pelo menos o mesmo número de elementos que 'campos'
         valores += [''] * (len(campos) - len(valores))
-        
+
         # Adiciona list_price ao final
         campos.append('list_price')
 
