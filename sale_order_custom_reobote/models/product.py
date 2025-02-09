@@ -50,6 +50,7 @@ class ProductTemplate(models.Model):
                 old_record = record.read([field_name])[0]
                 old_custom_id = old_record.get(field_name)
                 if old_custom_id:
+                    # Desempacota o ID se ele for uma tupla
                     if isinstance(old_custom_id, tuple):
                         old_custom_id = old_custom_id[0]
                     custom = self.env['reobote.custom'].browse(old_custom_id)
@@ -58,56 +59,71 @@ class ProductTemplate(models.Model):
 
     @api.model
     def create(self, vals):
+        if 'concatenado' in vals and vals['concatenado']:
+            self.processar_concatenado(vals)  # Processa antes de criar o registro
         res = super(ProductTemplate, self).create(vals)
         self._update_reobote_custom_campo(res, [
-            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-            'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
+            'codigo_cliente', 'diametro_externo', 'diametro_externo_2', 'diametro_interno', 'diametro_interno_2',
+            'espessura', 'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+            'dint2_toler_maior', 'dint2_toler_menor', 'dext_tolerancia_maior', 'dext_tolerancia_menor',
+            'dext2_toler_maior', 'dext2_toler_menor', 'comp_tolerancia_maior', 'comp_tolerancia_menor',
+            'esp_tolerancia_maior', 'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
             'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
         ])
         return res
 
     def write(self, vals):
         if 'concatenado' in vals and vals['concatenado']:
-            self.processar_concatenado(vals)
+            self.processar_concatenado(vals)  # Processa antes de atualizar o registro
 
         res = super(ProductTemplate, self).write(vals)
         for record in self:
             self._update_reobote_custom_campo(record, [
-                'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-                'comprimento', 'perfil_externo', 'perfil_interno', 'norma',
+                'codigo_cliente', 'diametro_externo', 'diametro_externo_2', 'diametro_interno', 'diametro_interno_2',
+                'espessura', 'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+                'dint2_toler_maior', 'dint2_toler_menor', 'dext_tolerancia_maior', 'dext_tolerancia_menor',
+                'dext2_toler_maior', 'dext2_toler_menor', 'comp_tolerancia_maior', 'comp_tolerancia_menor',
+                'esp_tolerancia_maior', 'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
                 'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
             ])
         return res
 
+
     def processar_concatenado(self, vals):
         valores = [v.strip() for v in vals['concatenado'].split('|')]
         campos = [
-            'codigo_cliente', 'diametro_externo', 'diametro_interno', 'espessura',
-            'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
-            'dext_tolerancia_maior', 'dext_tolerancia_menor', 'comp_tolerancia_maior',
-            'comp_tolerancia_menor','esp_tolerancia_maior', 'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
+            'codigo_cliente', 'diametro_externo', 'diametro_externo_2', 'diametro_interno', 'diametro_interno_2',
+            'espessura', 'comprimento', 'variacao', 'dint_tolerancia_maior', 'dint_tolerancia_menor',
+            'dint2_toler_maior', 'dint2_toler_menor', 'dext_tolerancia_maior', 'dext_tolerancia_menor',
+            'dext2_toler_maior', 'dext2_toler_menor', 'comp_tolerancia_maior', 'comp_tolerancia_menor',
+            'esp_tolerancia_maior', 'esp_tolerancia_menor', 'perfil_externo', 'perfil_interno', 'norma',
             'materia_prima', 'aco', 'fornecimento', 'superficie', 'faces', 'embalagem'
         ]
 
         # Garante que 'valores' tenha pelo menos o mesmo número de elementos que 'campos'
         valores += [''] * (len(campos) - len(valores))
-        
-        # Adiciona list_price ao final
+
+        # Adiciona list_price ao final (fora do loop)
         campos.append('list_price')
+        valores.append('')  # Adiciona um valor vazio para list_price inicialmente
+
 
         # Usar busca única para todos os valores
-        reobote_customs = self.env['reobote.custom'].search([('name', 'in', valores)])
+        reobote_customs = self.env['reobote.custom'].search([('name', 'in', [v for v in valores if v])])
         reobote_customs_dict = {rc.name: rc for rc in reobote_customs}
 
         vals_to_write = {}
+        preco = None  # Inicializa a variável preco
+
         for i, campo in enumerate(campos):
             valor = valores[i]
+
             if campo == 'list_price':
-                try:
-                    preco = float(valor)
-                    vals_to_write['list_price'] = preco
-                except ValueError:
-                    pass
+                if valor: # Se o valor de list_price for preenchido.
+                    try:
+                        preco = float(valor)
+                    except ValueError:
+                        preco = 0.0  # Valor padrão se a conversão falhar
             elif valor:
                 reobote_custom = reobote_customs_dict.get(valor)
                 if reobote_custom:
@@ -119,6 +135,8 @@ class ProductTemplate(models.Model):
             else:
                 vals_to_write[campo] = False
 
+        if preco is not None:  # Adiciona o preço apenas se foi definido
+            vals_to_write['list_price'] = preco
 
         # Atualiza vals com os novos valores
         vals.update(vals_to_write)
