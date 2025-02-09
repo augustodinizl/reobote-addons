@@ -1,185 +1,181 @@
-<odoo>
-      <template id="report_saleorder_document_reobote" inherit_id="sale.report_saleorder_document">
-        <data inherit_id="sale.report_saleorder_document">
-                <xpath expr="//h2[@class='mt-4']" position="replace">
-                    <center>
-                        <h2 class="mt-4">
-                            <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
-                            <span t-elif="doc.state in ['draft','sent']">ORÇAMENTO # </span>
-                            <span t-else="">ORDEM DE VENDA # </span>
-                            <span t-field="doc.name"/>
-                        </h2>
-                        <p><strong>Data de emissão: </strong><span class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></p>
-                    </center>
-                </xpath>
-                <xpath expr="//div[@id='informations']" position="before">
-                    <div class="row mt-4 total" id="tabela_topo">
-                        <div class="col-12">
-                            <table class="table table-sm table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CLIENTE</th>
-                                        <th colspan="2.2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VENDEDOR</th>
-                                        <th colspan="2.2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PRAZO DE ENTREGA</th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FRETE</th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CONDIÇÃO</th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PIS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COFINS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ICMS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
-                                        <th colspan="2.8" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">IPI <br/><span style="color: red; font-style: italic; white-space: nowrap;">A INCLUIR</span></th>
-                                        <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">TOTAL DA PROPOSTA</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.partner_id.name or '').upper()"/></td>
-                                        <td colspan="2.2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.user_id.name or '').upper()"/></td>
-                                        <td colspan="2.2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.prazo_entrega.name or '').upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.frete.name or '').upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.payment_term_id.name.upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.pis_incluso.name.upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.cofins_incluso.name.upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.icms_incluso.name.upper()"/></td>
-                                        <td colspan="2.8" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.ipi_a_incluir.name.upper()"/></td>
-                                        <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </xpath>
-                <xpath expr="//div[@id='informations']" position="after">
-                    <div class="row mt-4">
+<data inherit_id="sale.report_saleorder_document">
+        <xpath expr="//h2[@class='mt-4']" position="replace">
+            <center>
+                <h2 class="mt-4">
+                    <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
+                    <span t-elif="doc.state in ['draft','sent']">ORÇAMENTO # </span>
+                    <span t-else="">ORDEM DE VENDA # </span>
+                    <span t-field="doc.name"/>
+                </h2>
+                <p><strong>Data de emissão: </strong><span class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/></p>
+            </center>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="before">
+            <div class="row mt-4 total" id="tabela_topo">
+                <div class="col-12">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CLIENTE</th>
+                                <th colspan="2.2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VENDEDOR</th>
+                                <th colspan="2.2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PRAZO DE ENTREGA</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FRETE</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CONDIÇÃO</th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PIS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COFINS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ICMS <br/><span style="color: limegreen; font-style: italic;">INCLUSO</span></th>
+                                <th colspan="2.8" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">IPI <br/><span style="color: red; font-style: italic; white-space: nowrap;">A INCLUIR</span></th>
+                                <th colspan="2.4" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">TOTAL DA PROPOSTA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.partner_id.name.upper()"/></td>
+                                <td colspan="2.2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.user_id.name.upper()"/></td>
+                                <td colspan="2.2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.prazo_entrega.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.frete.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.payment_term_id.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.pis_incluso.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.cofins_incluso.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.icms_incluso.name.upper()"/></td>
+                                <td colspan="2.8" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="doc.ipi_a_incluir.name.upper()"/></td>
+                                <td colspan="2.4" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="after">
+            <div class="row mt-4">
+                <div class="col-12">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th colspan="24" class="text-left" style="background-color: #595959; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 3px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                    RESUMO DA PROPOSTA
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ITEM</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO REOBOTE</th>
+                                <th colspan="9" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DESCRIÇÃO</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
+                                <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
+                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO (SEM IPI)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.order_line" t-as="line">
+                              <tr>
+                                <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line_index"/></td>
+                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.codigo_cliente.name.upper()"/></td>
+                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.default_code.upper()"/></td>
+                                <td colspan="9" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.name.upper()"/></td>
+                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom_qty"/></td>
+                                <td colspan="1" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom.code"/></td>
+                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
+                              </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div id="informations"/>
+        </xpath>
+        <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="after">
+            <div class="clearfix">
+                <t t-foreach="doc.order_line" t-as="line">
+                    <div class="row mt-4" style="page-break-inside: avoid;">
                         <div class="col-12">
                             <table class="table table-sm table-borderless">
                                 <thead>
                                     <tr>
                                         <th colspan="24" class="text-left" style="background-color: #595959; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 3px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
-                                            RESUMO DA PROPOSTA
+                                            ITEM <span t-esc="line_index + 1"/> - <span t-field="line.product_id.name"/>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ITEM</th>
-                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
                                         <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO REOBOTE</th>
-                                        <th colspan="9" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DESCRIÇÃO</th>
-                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
-                                        <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
-                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO (SEM IPI)</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO EXT.</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO INT.</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ESPESSURA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COMPRIMENTO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL EXTERNO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL INTERNO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-foreach="doc.order_line" t-as="line">
                                     <tr>
-                                        <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line_index"/></td>
-                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.codigo_cliente.name.upper()"/></td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.default_code.upper()"/></td>
-                                        <td colspan="9" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.name.upper()"/></td>
-                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom_qty"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.codigo_cliente.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.dext_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.dext_tolerancia_maior.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.dint_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.dint_tolerancia_maior.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.esp_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.esp_tolerancia_maior.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.comp_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.comp_tolerancia_maior.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.perfil_externo.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.perfil_interno.name.upper()"/></td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">NORMA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">MATERIA-PRIMA</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">AÇO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FORNECIMENTO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">SUPERFÍCIE</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FACES</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">EMBALAGEM</th>
+                                        <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
+                                        <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.norma.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.materia_prima.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.aco.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.fornecimento.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.superficie.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.faces.name.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.embalagem.name.upper()"/></td>
+                                        <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom_qty"/></td>
                                         <td colspan="1" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom.code"/></td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th colspan="18" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">OBSERVAÇÕES</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO UNITÁRIO</th>
+                                        <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VALOR TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="18" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.obs.upper()"/></td>
+                                        <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                                     </tr>
-                                    </t>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </xpath>
-                <xpath expr="//div[@id='informations']" position="replace">
-                    <div id="informations"/>
-                </xpath>
-                <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="attributes">
-                    <attribute name="style">display: none;</attribute>
-                </xpath>
-                <xpath expr="//t/t/div/table[@class='table table-sm o_main_table table-borderless mt-4']" position="after">
-                    <div class="clearfix">
-                        <t t-foreach="doc.order_line" t-as="line">
-                            <div class="row mt-4" style="page-break-inside: avoid;">
-                                <div class="col-12">
-                                    <table class="table table-sm table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="24" class="text-left" style="background-color: #595959; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 3px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
-                                                    ITEM <span t-esc="line_index + 1"/> - <span t-field="line.product_id.name"/>
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO REOBOTE</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">CÓDIGO CLIENTE</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO EXT.</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">DIAMETRO INT.</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">ESPESSURA</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">COMPRIMENTO</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL EXTERNO</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PERFIL INTERNO</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.default_code.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.codigo_cliente.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.dext_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.dext_tolerancia_maior.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.dint_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.dint_tolerancia_maior.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.esp_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.esp_tolerancia_maior.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.comp_tolerancia_menor.name.upper()"/> / <span t-esc="line.product_id.comp_tolerancia_maior.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.perfil_externo.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.perfil_interno.name.upper()"/></td>
-                                            </tr>
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">NORMA</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">MATERIA-PRIMA</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">AÇO</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FORNECIMENTO</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">SUPERFÍCIE</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">FACES</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">EMBALAGEM</th>
-                                                <th colspan="2" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VOLUME</th>
-                                                <th colspan="1" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">UN.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.norma.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.materia_prima.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.aco.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.fornecimento.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.superficie.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.faces.name.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.embalagem.name.upper()"/></td>
-                                                <td colspan="2" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom_qty"/></td>
-                                                <td colspan="1" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_uom.code"/></td>
-                                            </tr>
-                                        </tbody>
-                                        <thead>
-                                            <tr>
-                                                <th colspan="18" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">OBSERVAÇÕES</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">PREÇO UNITÁRIO</th>
-                                                <th colspan="3" class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 15px; vertical-align: middle; white-space: normal; word-wrap: break-word;">VALOR TOTAL</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="18" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.obs.upper()"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
-                                                <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </t>
-                    </div>
-                    <br/>
-                </xpath>
-        
-                <xpath expr="//div[@name='so_total_summary']" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-                <xpath expr="//div[@id='total']" position="attributes">
-                <attribute name="t-att-style">'display: none;'</attribute>
-                </xpath>
-            </data>
-        </template> 
-    </odoo>
+                </t>
+            </div>
+            <br/>
+        </xpath>
+ 
+        <xpath expr="//div[@name='so_total_summary']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//div[@id='total']" position="attributes">
+          <attribute name="t-att-style">'display: none;'</attribute>
+        </xpath>
+       </data>
