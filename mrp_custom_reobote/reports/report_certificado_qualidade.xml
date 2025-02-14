@@ -8,7 +8,7 @@
         <field name="report_file">mrp_custom_reobote.report_certificado_qualidade_template</field>
         <field name="binding_model_id" ref="mrp.model_mrp_production"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="base.paperformat_euro"/> 
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
     </record>
 
     <record id="action_report_certificado_qualidade" model="ir.actions.server">
@@ -17,12 +17,11 @@
         <field name="binding_model_id" ref="mrp.model_mrp_production"/>
         <field name="state">code</field>
         <field name="code">
-            if record.state == 'done':
-                action = env.ref('mrp_custom_reobote.report_certificado_qualidade').report_action(record)
-            else:
-                raise UserError("A ordem de produção deve estar no estado 'Concluído' para gerar o certificado.")
+if record.state == 'done':
+    action = env.ref('mrp_custom_reobote.report_certificado_qualidade').report_action(record)
+else:
+    raise UserError("A ordem de produção deve estar no estado 'Concluído' para gerar o certificado.")
         </field>
         <field name="binding_view_types">list,form</field>
     </record>
-
 </odoo>
