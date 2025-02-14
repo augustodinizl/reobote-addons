@@ -18,7 +18,7 @@
         'views/routing_reobote.xml',
         'views/mrp_production_form.xml',
         'reports/report_certificado_qualidade_templates.xml',
-        'reports/certificado_qualidade.xml',
+        'reports/report_certificado_qualidade.xml',
     ],
     'installable': True,
     'auto_install': False,
