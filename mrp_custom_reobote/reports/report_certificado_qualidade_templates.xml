@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_certificado_qualidade_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h2>CERTIFICADO DE QUALIDADE</h2>
+                                <h4>PROCESSO OF-<span t-field="doc.name"/></h4>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="8" class="text-center" style="background-color: #f2f2f2;">DADOS GERAIS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="font-weight: bold;">CLIENTE</td>
+                                            <td><span t-field="doc.partner_id.name"/></td>
+                                            <td style="font-weight: bold;">PRODUTO REOBOTE</td>
+                                            <td><span t-field="doc.product_id.name"/></td>
+                                            <td style="font-weight: bold;">PRODUTO CLIENTE</td>
+                                            <td><span t-field="doc.product_id.default_code"/></td>
+                                            <td style="font-weight: bold;">PEDIDO DE VENDA</td>
+                                            <td><span t-field="doc.sale_order_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">NOTA FISCAL</td>
+                                            <td>
+                                                <t t-if="doc.picking_ids">
+                                                    <t t-foreach="doc.picking_ids" t-as="picking">
+                                                        <t t-if="picking.state == 'done' and picking.picking_type_code == 'outgoing'">
+                                                            <span t-field="picking.name"/>,
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                            </td>
+                                            <td style="font-weight: bold;">LOTE MP</td>
+                                            <td><span t-field="doc.lot_producing_id.name"/></td>
+                                            <td style="font-weight: bold;">QUANTIDADE</td>
+                                            <td><span t-field="doc.product_qty"/></td>
+                                            <td style="font-weight: bold;">EMISSÃO</td>
+                                            <td><span t-field="doc.date_finished" t-options='{"format": "dd/MM/yyyy"}'/></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">NORMA</td>
+                                            <td>
+                                               <t t-if="doc.product_id.norma_id">
+                                                    <span t-field="doc.product_id.norma_id.name"/>
+                                                </t>
+                                            </td>
+                                            <td style="font-weight: bold;">PERFIL EXTERNO</td>
+                                            <td>
+                                            </td>
+                                            <td style="font-weight: bold;">PERFIL INTERNO</td>
+                                            <td>
+                                            </td>
+                                            <td style="font-weight: bold;">MATÉRIA-PRIMA</td>
+                                            <td>
+                                               <t t-if="doc.move_raw_ids">
+                                                    <span t-field="doc.move_raw_ids[0].product_id.name"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">AÇO</td>
+                                            <td>
+                                            </td>
+                                            <td style="font-weight: bold;">FORNECIMENTO</td>
+                                            <td></td>
+                                            <td style="font-weight: bold;">SUPERFÍCIE</td>
+                                            <td></td>
+                                            <td style="font-weight: bold;">FACES</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">DIMENSIONAL</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
+                                            <th style="font-weight: bold;">UNIDADE</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
+                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DIÂMETRO EXT.</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DIÂMETRO INT.</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>COMPRIMENTO</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">ENSAIOS E PROPRIEDADES MECÂNICAS</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
+                                            <th style="font-weight: bold;">UNIDADE</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
+                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>RESISTÊNCIA À TRAÇÃO</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ALONGAMENTO</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>INSPEÇÃO VISUAL</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-sm table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">COMPOSIÇÃO QUÍMICA</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
+                                            <th style="font-weight: bold;">UNIDADE</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
+                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
+                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
+                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CARBONO (C)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>MANGANÊS (Mn)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>FÓSFORO (P)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENXOFRE (S)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SILÍCIO (SI)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-sm table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-justify"><b>OBSERVAÇÕES</b><br/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="page-break-inside: avoid;">
+                                    <div style="border-top: 1px solid black; width: 30%; margin: 30px auto 0; padding-top: 10px; text-align: center;">
+                                        Assinatura do Responsável
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
