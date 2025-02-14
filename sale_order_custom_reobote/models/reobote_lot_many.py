@@ -43,4 +43,5 @@ class ReoboteLotMany(models.Model):
         for record in self:
             self._update_reobote_mrp_custom_campo(record, [
                 'especificacao', 'requisitos', 'controle', 'frequencia', 'referencia', 'encontrado', 'instrumento'
+            ])
         return res
