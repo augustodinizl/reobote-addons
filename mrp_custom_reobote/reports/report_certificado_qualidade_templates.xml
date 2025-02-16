@@ -8,248 +8,136 @@
                         <div class="row">
                             <div class="col-12 text-center">
                                 <h2>CERTIFICADO DE QUALIDADE</h2>
-                                <h4>PROCESSO OF-<span t-field="doc.name"/></h4>
+                                <h4>PROCESSO <span t-field="doc.name"/></h4>
                             </div>
                         </div>
 
                         <div class="row mt-4">
                             <div class="col-12">
-                                <table class="table table-sm table-bordered">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
                                     <thead>
                                         <tr>
-                                            <th colspan="8" class="text-center" style="background-color: #f2f2f2;">DADOS GERAIS</th>
+                                            <th style="padding-left: 10px; text-align: left; background-color: #595959; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                                DADOS GERAIS
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">CLIENTE</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">PRODUTO REOBOTE</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">PRODUTO CLIENTE</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">PEDIDO DE VENDA</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">NOTA FISCAL</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">LOTE MP</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">QUANTIDADE</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">EMISSÃO</th>                                        
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td style="font-weight: bold;">CLIENTE</td>
-                                            <td><span t-field="doc.partner_id.name"/></td>
-                                            <td style="font-weight: bold;">PRODUTO REOBOTE</td>
-                                            <td><span t-field="doc.product_id.name"/></td>
-                                            <td style="font-weight: bold;">PRODUTO CLIENTE</td>
-                                            <td><span t-field="doc.product_id.default_code"/></td>
-                                            <td style="font-weight: bold;">PEDIDO DE VENDA</td>
-                                            <td><span t-field="doc.sale_order_id.name"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">NOTA FISCAL</td>
-                                            <td>
-                                                <t t-if="doc.picking_ids">
-                                                    <t t-foreach="doc.picking_ids" t-as="picking">
-                                                        <t t-if="picking.state == 'done' and picking.picking_type_code == 'outgoing'">
-                                                            <span t-field="picking.name"/>,
-                                                        </t>
-                                                    </t>
-                                                </t>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.partner_id.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.default_code or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.codigo_cliente.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.origin or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"/>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                              <t t-if="doc.move_raw_ids and doc.move_raw_ids[0].lot_ids">
+                                                  <t t-esc="(doc.move_raw_ids[0].lot_ids[0].name or '').upper()"/>
+                                              </t>
+                                              <t t-else="">
+                                                  <span>N/D</span>  
+                                              </t>
                                             </td>
-                                            <td style="font-weight: bold;">LOTE MP</td>
-                                            <td><span t-field="doc.lot_producing_id.name"/></td>
-                                            <td style="font-weight: bold;">QUANTIDADE</td>
-                                            <td><span t-field="doc.product_qty"/></td>
-                                            <td style="font-weight: bold;">EMISSÃO</td>
-                                            <td><span t-field="doc.date_finished" t-options='{"format": "dd/MM/yyyy"}'/></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">NORMA</td>
-                                            <td>
-                                               <t t-if="doc.product_id.norma_id">
-                                                    <span t-field="doc.product_id.norma_id.name"/>
-                                                </t>
-                                            </td>
-                                            <td style="font-weight: bold;">PERFIL EXTERNO</td>
-                                            <td>
-                                            </td>
-                                            <td style="font-weight: bold;">PERFIL INTERNO</td>
-                                            <td>
-                                            </td>
-                                            <td style="font-weight: bold;">MATÉRIA-PRIMA</td>
-                                            <td>
-                                               <t t-if="doc.move_raw_ids">
-                                                    <span t-field="doc.move_raw_ids[0].product_id.name"/>
-                                                </t>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">AÇO</td>
-                                            <td>
-                                            </td>
-                                            <td style="font-weight: bold;">FORNECIMENTO</td>
-                                            <td></td>
-                                            <td style="font-weight: bold;">SUPERFÍCIE</td>
-                                            <td></td>
-                                            <td style="font-weight: bold;">FACES</td>
-                                            <td></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_qty or '')"/> <span t-esc="(doc.product_uom_id.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="time.strftime('%d-%m-%Y')"/></td>
                                         </tr>
                                     </tbody>
-                                </table>
-
-                                <table class="table table-sm table-bordered">
+                              </table>
+                              <table style="width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed; margin-bottom: 15px;">
                                     <thead>
                                         <tr>
-                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">DIMENSIONAL</th>
-                                        </tr>
-                                        <tr>
-                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
-                                            <th style="font-weight: bold;">UNIDADE</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
-                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">NORMA</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">PERFIL EXTERNO</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">PERFIL INTERNO</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">MATÉRIA-PRIMA</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">AÇO</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">FORNECIMENTO</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">SUPERFÍCIE</th>
+                                            <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">FACES</th>                                        
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>DIÂMETRO EXT.</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>DIÂMETRO INT.</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>COMPRIMENTO</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.norma.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.perfil_externo.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.perfil_interno.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.materia_prima.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.aco.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.fornecimento.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.superficie.name or '').upper()"/></td>
+                                            <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(doc.product_id.faces.name or '').upper()"/></td>
                                         </tr>
                                     </tbody>
+                              </table>
+                              <t t-foreach="doc.qc_inspections_ids" t-as="line">
+                                  <t t-if="line.state != 'canceled'">
+                                      <table style="width: 100%; border-collapse: collapse; font-size: 10px; padding-top: 150px">
+                                          <thead>
+                                              <tr>
+                                                  <th style="padding-left: 10px; text-align: left; background-color: #595959; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                                      <span t-esc="(line.test.category.name or '').upper()"/>
+                                                  </th>
+                                              </tr>
+                                          </thead>
+                                      </table>
+                                      <table style="width: 100%; border-collapse: collapse; font-size: 10px; table-layout: fixed; margin-bottom: 15px;">
+                                          <thead>
+                                              <tr>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">ESPECIFICAÇÃO</th>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">UNIDADE</th>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">REFERÊNCIA MÍN</th>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">REFERÊNCIA MÁX</th>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">ENCONTRADO</th>
+                                                  <th class="text-center" style="background-color: #054790; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; width: 12,5%; vertical-align: middle; height: 20px">AVALIAÇÃO</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                              <t t-foreach="line.inspection_lines" t-as="line2">
+                                                  <tr>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line2.name or '').upper()"/></td>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line2.uom_id.name or '').upper()"/></td>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line2.min_value or '')"/></td>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line2.max_value or '')"/></td>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc=""/></td>
+                                                      <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc=""/></td>
+                                                  </tr>
+                                              </t>
+                                          </tbody>
+                                      </table>
+                                  </t>
+                              </t>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 10px; padding-top: 150px">
+                                        <thead>
+                                            <tr>
+                                                <th style="padding-left: 10px; text-align: left; background-color: #595959; color: white; font-weight: bold; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
+                                                    OBSERVAÇÕES
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 20px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><!--<span t-esc="(doc.partner_id.name or '').upper()"/>-->
+                                                  <span style="color: white;">.</span><br/>
+                                                  <span style="color: white;">.</span><br/>
+                                                  <span style="color: white;">.</span><br/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
                                 </table>
-
-                                <table class="table table-sm table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">ENSAIOS E PROPRIEDADES MECÂNICAS</th>
-                                        </tr>
-                                        <tr>
-                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
-                                            <th style="font-weight: bold;">UNIDADE</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
-                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>RESISTÊNCIA À TRAÇÃO</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>ALONGAMENTO</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>INSPEÇÃO VISUAL</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <table class="table table-sm table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="7" class="text-center" style="background-color: #f2f2f2;">COMPOSIÇÃO QUÍMICA</th>
-                                        </tr>
-                                        <tr>
-                                            <th style="font-weight: bold;">ESPECIFICAÇÃO</th>
-                                            <th style="font-weight: bold;">UNIDADE</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÍN</th>
-                                            <th style="font-weight: bold;">REFERÊNCIA MÁX</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 1</th>
-                                            <th style="font-weight: bold;">ENCONTRADO 2</th>
-                                            <th style="font-weight: bold;">AVALIAÇÃO</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>CARBONO (C)</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>MANGANÊS (Mn)</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>FÓSFORO (P)</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>ENXOFRE (S)</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>SILÍCIO (SI)</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table class="table table-sm table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-justify"><b>OBSERVAÇÕES</b><br/></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div style="page-break-inside: avoid;">
-                                    <div style="border-top: 1px solid black; width: 30%; margin: 30px auto 0; padding-top: 10px; text-align: center;">
-                                        Assinatura do Responsável
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
