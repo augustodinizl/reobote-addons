@@ -1,880 +1,1530 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
 
-    <record id="coa_generic_1" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_1" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">1</field>
         <field name="name">ATIVO</field>
     </record>
-    <record id="coa_generic_11" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_11" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">1.1</field>
         <field name="name">ATIVO CIRCULANTE</field>
-        <field name="parent_id" ref="coa_generic_1" />
+        <field name="parent_id" ref="coa_reobote_1"/>
     </record>
-    <record id="coa_generic_111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.1</field>
-        <field name="name">DISPONÍVEL</field>
-        <field name="parent_id" ref="coa_generic_11" />
+    <record id="coa_reobote_1101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01</field>
+        <field name="name">DISPONIVEL</field>
+        <field name="parent_id" ref="coa_reobote_11"/>
     </record>
-    <record id="coa_generic_1111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.1.1</field>
-        <field name="name">CAIXA</field>
-        <field name="parent_id" ref="coa_generic_111" />
+    <record id="coa_reobote_110105" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05</field>
+        <field name="name">BANCOS C/MOVIMENTO</field>
+        <field name="parent_id" ref="coa_reobote_1101"/>
     </record>
-    <record id="coa_generic_1112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.1.2</field>
-        <field name="name">BANCOS CONTA MOVIMENTO</field>
-        <field name="parent_id" ref="coa_generic_111" />
+    <record id="coa_reobote_110105001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000001</field>
+        <field name="name">Banco do Brasil</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
     </record>
-    <record id="coa_generic_1113" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.1.3</field>
-        <field name="name">APLICAÇÕES FINANCEIRAS</field>
-        <field name="parent_id" ref="coa_generic_111" />
+    <record id="coa_reobote_110105003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000003</field>
+        <field name="name">Bradesco S/A</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
     </record>
-    <record id="coa_generic_112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.2</field>
+    <record id="coa_reobote_110105004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000004</field>
+        <field name="name">Banco Itau S/A</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000005</field>
+        <field name="name">SICOOB - Sistema de Cooperativas de Credito do Brasil</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105010" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000010</field>
+        <field name="name">Conta Corrente Transitoria</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105111" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000111</field>
+        <field name="name">Banco Itaú S/A c/c: 33038</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105174" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000174</field>
+        <field name="name">Banco Digital Omie Cash</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105213" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000213</field>
+        <field name="name">Banco Digital Omie Cash c/c 1684957084-7</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105215" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000215</field>
+        <field name="name">Banco Itau S/A C/C 33942-7</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110105217" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.05.000.0000217</field>
+        <field name="name">Banco Itau S/A C/C 47515-5</field>
+        <field name="parent_id" ref="coa_reobote_110105"/>
+    </record>
+    <record id="coa_reobote_110110" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.10</field>
+        <field name="name">APLICACOES FINANCEIRAS</field>
+        <field name="parent_id" ref="coa_reobote_1101"/>
+    </record>
+    <record id="coa_reobote_110110112" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.10.000.0000112</field>
+        <field name="name">Banco do Brasil S/A - BB CDB DI</field>
+        <field name="parent_id" ref="coa_reobote_110110"/>
+    </record>
+    <record id="coa_reobote_110110198" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.01.10.000.0000198</field>
+        <field name="name">BB RF LP EMPRESA</field>
+        <field name="parent_id" ref="coa_reobote_110110"/>
+    </record>
+    <record id="coa_reobote_1105" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.05</field>
         <field name="name">CONTAS A RECEBER</field>
-        <field name="parent_id" ref="coa_generic_11" />
+        <field name="parent_id" ref="coa_reobote_11"/>
     </record>
-    <record id="coa_generic_1121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.2.1</field>
-        <field name="name">CLIENTES</field>
-        <field name="parent_id" ref="coa_generic_112" />
+    <record id="coa_reobote_110501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.05.01</field>
+        <field name="name">CLIENTES A RECEBER</field>
+        <field name="parent_id" ref="coa_reobote_1105"/>
     </record>
-    <record id="coa_generic_1122" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.2.2</field>
-        <field name="name">(-) DUPLICATAS DESCONTADAS</field>
-        <field name="parent_id" ref="coa_generic_112" />
+    <record id="coa_reobote_110501001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.05.01.001</field>
+        <field name="name">CLIENTES NACIONAIS</field>
+        <field name="parent_id" ref="coa_reobote_110501"/>
     </record>
-    <record id="coa_generic_1129" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.2.9</field>
-        <field name="name">OUTROS VALORES A RECEBER</field>
-        <field name="parent_id" ref="coa_generic_112" />
+    <record id="coa_reobote_110501001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.05.01.001.0000001</field>
+        <field name="name">Clientes Diversos</field>
+        <field name="parent_id" ref="coa_reobote_110501001"/>
     </record>
-    <record id="coa_generic_113" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3</field>
+    <record id="coa_reobote_1110" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10</field>
+        <field name="name">CREDITOS DIVERSOS</field>
+        <field name="parent_id" ref="coa_reobote_11"/>
+    </record>
+    <record id="coa_reobote_111001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.01</field>
+        <field name="name">DEVEDORES DIVERSOS</field>
+        <field name="parent_id" ref="coa_reobote_1110"/>
+    </record>
+    <record id="coa_reobote_111001005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.01.000.0000005</field>
+        <field name="name">Devedores Diversos</field>
+        <field name="parent_id" ref="coa_reobote_111001"/>
+    </record>
+    <record id="coa_reobote_111010" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.10</field>
+        <field name="name">ADIANTAMENTO A FUNCIONARIOS</field>
+        <field name="parent_id" ref="coa_reobote_1110"/>
+    </record>
+    <record id="coa_reobote_111010002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.10.000.0000002</field>
+        <field name="name">Adiantamento de Ferias</field>
+        <field name="parent_id" ref="coa_reobote_111010"/>
+    </record>
+    <record id="coa_reobote_111010003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.10.000.0000003</field>
+        <field name="name">Adiantamento de 13º Salario</field>
+        <field name="parent_id" ref="coa_reobote_111010"/>
+    </record>
+    <record id="coa_reobote_111010004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.10.000.0000004</field>
+        <field name="name">Emprestimos a Funcionarios</field>
+        <field name="parent_id" ref="coa_reobote_111010"/>
+    </record>
+    <record id="coa_reobote_111010005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.10.000.0000005</field>
+        <field name="name">Adiantamento a Funcionarios</field>
+        <field name="parent_id" ref="coa_reobote_111010"/>
+    </record>
+    <record id="coa_reobote_111030" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30</field>
+        <field name="name">IMPOSTOS A RECUPERAR</field>
+        <field name="parent_id" ref="coa_reobote_1110"/>
+    </record>
+    <record id="coa_reobote_111030001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30.000.0000001</field>
+        <field name="name">ICMS a Recuperar</field>
+        <field name="parent_id" ref="coa_reobote_111030"/>
+    </record>
+    <record id="coa_reobote_111030003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30.000.0000003</field>
+        <field name="name">IPI a Recuperar</field>
+        <field name="parent_id" ref="coa_reobote_111030"/>
+    </record>
+    <record id="coa_reobote_111030014" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30.000.0000014</field>
+        <field name="name">IR. Retido s/Aplicacao Financeira</field>
+        <field name="parent_id" ref="coa_reobote_111030"/>
+    </record>
+    <record id="coa_reobote_111030023" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30.000.0000023</field>
+        <field name="name">Restituicao de Impostos Em Processo</field>
+        <field name="parent_id" ref="coa_reobote_111030"/>
+    </record>
+    <record id="coa_reobote_111030029" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.10.30.000.0000029</field>
+        <field name="name">Retenção Lei 10833 Pago Indevidamente</field>
+        <field name="parent_id" ref="coa_reobote_111030"/>
+    </record>
+    <record id="coa_reobote_1115" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.15</field>
         <field name="name">ESTOQUES</field>
-        <field name="parent_id" ref="coa_generic_11" />
+        <field name="parent_id" ref="coa_reobote_11"/>
     </record>
-    <record id="coa_generic_1131" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3.1</field>
-        <field name="name">MERCADORIAS PARA REVENDA</field>
-        <field name="parent_id" ref="coa_generic_113" />
+    <record id="coa_reobote_111502" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.15.02</field>
+        <field name="name">ESTOQUE DE PRODUTOS</field>
+        <field name="parent_id" ref="coa_reobote_1115"/>
     </record>
-    <record id="coa_generic_1132" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3.2</field>
-        <field name="name">PRODUTOS ACABADOS</field>
-        <field name="parent_id" ref="coa_generic_113" />
+    <record id="coa_reobote_111502001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.1.15.02.000.0000001</field>
+        <field name="name">Materia Prima (Insumos)</field>
+        <field name="parent_id" ref="coa_reobote_111502"/>
     </record>
-    <record id="coa_generic_1133" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3.3</field>
-        <field name="name">MATÉRIAS-PRIMAS</field>
-        <field name="parent_id" ref="coa_generic_113" />
-    </record>
-    <record id="coa_generic_1134" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3.4</field>
-        <field name="name">MATERIAIS DE EMBALAGEM</field>
-        <field name="parent_id" ref="coa_generic_113" />
-    </record>
-    <record id="coa_generic_1139" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.3.9</field>
-        <field name="name">MATERIAIS DE CONSUMO</field>
-        <field name="parent_id" ref="coa_generic_113" />
-    </record>
-    <record id="coa_generic_114" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.4</field>
-        <field name="name">OUTROS CRÉDITOS</field>
-        <field name="parent_id" ref="coa_generic_11" />
-    </record>
-    <record id="coa_generic_1141" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.4.1</field>
-        <field name="name">IMPOSTOS A RECUPERAR</field>
-        <field name="parent_id" ref="coa_generic_114" />
-    </record>
-    <record id="coa_generic_1142" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.4.2</field>
-        <field name="name">ADIANTAMENTOS A EMPREGADOS</field>
-        <field name="parent_id" ref="coa_generic_114" />
-    </record>
-    <record id="coa_generic_1143" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.4.3</field>
-        <field name="name">ADIANTAMENTOS CONCEDIDOS</field>
-        <field name="parent_id" ref="coa_generic_114" />
-    </record>
-    <record id="coa_generic_115" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.5</field>
-        <field name="name">DESPESAS DO EXERCÍCIO SEGUINTE</field>
-        <field name="parent_id" ref="coa_generic_11" />
-    </record>
-    <record id="coa_generic_1151" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.1.5.1</field>
-        <field name="name">DESPESAS ANTECIPADAS</field>
-        <field name="parent_id" ref="coa_generic_115" />
-    </record>
-    <record id="coa_generic_12" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_12" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">1.2</field>
-        <field name="name">NÃO CIRCULANTE</field>
-        <field name="parent_id" ref="coa_generic_1" />
+        <field name="name">ATIVO NAO CIRCULANTE</field>
+        <field name="parent_id" ref="coa_reobote_1"/>
     </record>
-    <record id="coa_generic_121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.1</field>
-        <field name="name">REALIZÁVEL A LONGO PRAZO</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1211" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.1.1</field>
-        <field name="name">APLICAÇÕES FINANCEIRAS</field>
-        <field name="parent_id" ref="coa_generic_121" />
-    </record>
-    <record id="coa_generic_122" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.2</field>
-        <field name="name">CONTAS A RECEBER</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1221" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.2.1</field>
-        <field name="name">CLIENTES</field>
-        <field name="parent_id" ref="coa_generic_122" />
-    </record>
-    <record id="coa_generic_123" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.3</field>
-        <field name="name">CRÉDITOS TRIBUTÁRIOS</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1231" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.3.1</field>
-        <field name="name">IMPOSTOS A RECUPERAR</field>
-        <field name="parent_id" ref="coa_generic_123" />
-    </record>
-    <record id="coa_generic_124" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.4</field>
-        <field name="name">DESPESAS ANTECIPADAS</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1241" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.4.1</field>
-        <field name="name">DESPESAS A APROPRIAR</field>
-        <field name="parent_id" ref="coa_generic_124" />
-    </record>
-    <record id="coa_generic_125" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.5</field>
-        <field name="name">DEPÓSITOS JUDICIAIS</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1251" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.5.1</field>
-        <field name="name">DEPÓSITOS JUDICIAIS</field>
-        <field name="parent_id" ref="coa_generic_125" />
-    </record>
-    <record id="coa_generic_126" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.6</field>
-        <field name="name">EMPRESAS CONTROLADAS/COLIGADAS</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1261" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.6.1</field>
-        <field name="name">EMPRÉSTIMOS A CONTROLADAS/COLIGADAS</field>
-        <field name="parent_id" ref="coa_generic_126" />
-    </record>
-    <record id="coa_generic_127" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.7</field>
-        <field name="name">INVESTIMENTOS</field>
-        <field name="parent_id" ref="coa_generic_12" />
-    </record>
-    <record id="coa_generic_1271" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.7.1</field>
-        <field name="name">PARTICIPAÇÕES SOCIETÁRIAS</field>
-        <field name="parent_id" ref="coa_generic_127" />
-    </record>
-    <record id="coa_generic_128" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.8</field>
+    <record id="coa_reobote_1210" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10</field>
         <field name="name">IMOBILIZADO</field>
-        <field name="parent_id" ref="coa_generic_12" />
+        <field name="parent_id" ref="coa_reobote_12"/>
     </record>
-    <record id="coa_generic_1281" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.8.1</field>
-        <field name="name">BENS EM OPERAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_128" />
+    <record id="coa_reobote_121001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01</field>
+        <field name="name">IMOBILIZADO GERAL</field>
+        <field name="parent_id" ref="coa_reobote_1210"/>
     </record>
-    <record id="coa_generic_1289" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.8.9</field>
-        <field name="name">(-) DEPRECIAÇÕES ACUMULADAS</field>
-        <field name="parent_id" ref="coa_generic_128" />
+    <record id="coa_reobote_121001002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.002</field>
+        <field name="name">EDIFICIOS E CONSTRUCOES</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
     </record>
-    <record id="coa_generic_129" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.9</field>
-        <field name="name">INTANGÍVEL</field>
-        <field name="parent_id" ref="coa_generic_12" />
+    <record id="coa_reobote_121001002004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.002.0000004</field>
+        <field name="name">Benfeitorias em Imoveis de Terceiros</field>
+        <field name="parent_id" ref="coa_reobote_121001002"/>
     </record>
-    <record id="coa_generic_1291" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.9.1</field>
-        <field name="name">BENS INCORPÓREOS</field>
-        <field name="parent_id" ref="coa_generic_129" />
+    <record id="coa_reobote_121001002006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.002.0000006</field>
+        <field name="name">Imóveis em Construção</field>
+        <field name="parent_id" ref="coa_reobote_121001002"/>
     </record>
-    <record id="coa_generic_1296" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.9.6</field>
-        <field name="name">(-) AMORTIZAÇÕES ACUMULADAS</field>
-        <field name="parent_id" ref="coa_generic_129" />
+    <record id="coa_reobote_121001003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.003</field>
+        <field name="name">MAQUINAS E EQUIPAMENTOS</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
     </record>
-    <record id="coa_generic_1298" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.9.8</field>
-        <field name="name">GASTOS PRÉ-OPERACIONAIS</field>
-        <field name="parent_id" ref="coa_generic_129" />
+    <record id="coa_reobote_121001003001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.003.0000001</field>
+        <field name="name">Maquinas e Equipamentos</field>
+        <field name="parent_id" ref="coa_reobote_121001003"/>
     </record>
-    <record id="coa_generic_1299" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.2.9.9</field>
-        <field name="name">(-) AMORTIZAÇÕES ACUMULADAS</field>
-        <field name="parent_id" ref="coa_generic_129" />
+    <record id="coa_reobote_121001003002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.003.0000002</field>
+        <field name="name">Ferramentas e Acessorios</field>
+        <field name="parent_id" ref="coa_reobote_121001003"/>
     </record>
-    <record id="coa_generic_19" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.9</field>
-        <field name="name">CONTAS DE COMPENSAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_1" />
+    <record id="coa_reobote_121001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.004</field>
+        <field name="name">EQUIPAMENTOS DE INFORMATICA</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
     </record>
-    <record id="coa_generic_191" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.9.1</field>
-        <field name="name">BENS E DIREITOS</field>
-        <field name="parent_id" ref="coa_generic_19" />
+    <record id="coa_reobote_121001004001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.004.0000001</field>
+        <field name="name">Computadores e Perifericos </field>
+        <field name="parent_id" ref="coa_reobote_121001004"/>
     </record>
-    <record id="coa_generic_1911" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.9.1.1</field>
-        <field name="name">BENS EM PODER DE TERCEIROS</field>
-        <field name="parent_id" ref="coa_generic_191" />
+    <record id="coa_reobote_121001005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.005</field>
+        <field name="name">MOVEIS E UTENSILIOS</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
     </record>
-    <record id="coa_generic_1912" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.9.1.2</field>
-        <field name="name">ESTOQUES EM PODER DE TERCEIROS</field>
-        <field name="parent_id" ref="coa_generic_191" />
+    <record id="coa_reobote_121001005001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.005.0000001</field>
+        <field name="name">Moveis e Utensilios</field>
+        <field name="parent_id" ref="coa_reobote_121001005"/>
     </record>
-    <record id="coa_generic_1913" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">1.9.1.3</field>
-        <field name="name">REMESSAS DE VENDAS</field>
-        <field name="parent_id" ref="coa_generic_191" />
+    <record id="coa_reobote_121001007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.007</field>
+        <field name="name">VEICULOS</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
     </record>
-    <record id="coa_generic_2" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_121001007003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.007.0000003</field>
+        <field name="name">Veiculos</field>
+        <field name="parent_id" ref="coa_reobote_121001007"/>
+    </record>
+    <record id="coa_reobote_121001070" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070</field>
+        <field name="name">(-) DEPRECIACOES ACUMULADAS</field>
+        <field name="parent_id" ref="coa_reobote_121001"/>
+    </record>
+    <record id="coa_reobote_121001070002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070.0000002</field>
+        <field name="name">( - ) Depreciacao Acumulada - Edificacoes</field>
+        <field name="parent_id" ref="coa_reobote_121001070"/>
+    </record>
+    <record id="coa_reobote_121001070003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070.0000003</field>
+        <field name="name">( - ) Depreciacao Acumulada - Maquinas e Equipamentos</field>
+        <field name="parent_id" ref="coa_reobote_121001070"/>
+    </record>
+    <record id="coa_reobote_121001070004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070.0000004</field>
+        <field name="name">( - ) Depreciacao Acumulada - Equipamento de Informatica</field>
+        <field name="parent_id" ref="coa_reobote_121001070"/>
+    </record>
+    <record id="coa_reobote_121001070005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070.0000005</field>
+        <field name="name">( - ) Depreciacao Acumulada - Moveis e Utensilios</field>
+        <field name="parent_id" ref="coa_reobote_121001070"/>
+    </record>
+    <record id="coa_reobote_121001070007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">1.2.10.01.070.0000007</field>
+        <field name="name">( - ) Depreciacao Acumulada - Veiculos</field>
+        <field name="parent_id" ref="coa_reobote_121001070"/>
+    </record>
+    <record id="coa_reobote_2" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">2</field>
         <field name="name">PASSIVO</field>
     </record>
-    <record id="coa_generic_21" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_21" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">2.1</field>
-        <field name="name">CIRCULANTE</field>
-        <field name="parent_id" ref="coa_generic_2" />
+        <field name="name">PASSIVO CIRCULANTE</field>
+        <field name="parent_id" ref="coa_reobote_2"/>
     </record>
-    <record id="coa_generic_211" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.1</field>
+    <record id="coa_reobote_2101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.01</field>
         <field name="name">FORNECEDORES</field>
-        <field name="parent_id" ref="coa_generic_21" />
+        <field name="parent_id" ref="coa_reobote_21"/>
     </record>
-    <record id="coa_generic_2111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.1.1</field>
-        <field name="name">FORNECEDORES EM GERAL</field>
-        <field name="parent_id" ref="coa_generic_211" />
+    <record id="coa_reobote_210101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.01.01</field>
+        <field name="name">FORNECEDORES NACIONAIS</field>
+        <field name="parent_id" ref="coa_reobote_2101"/>
     </record>
-    <record id="coa_generic_212" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.2</field>
+    <record id="coa_reobote_210101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.01.01.001</field>
+        <field name="name">FORNECEDORES COM PARTES NAO RELACIONADAS</field>
+        <field name="parent_id" ref="coa_reobote_210101"/>
+    </record>
+    <record id="coa_reobote_210101001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.01.01.001.0000001</field>
+        <field name="name">Fornecedores Diversos</field>
+        <field name="parent_id" ref="coa_reobote_210101001"/>
+    </record>
+    <record id="coa_reobote_2110" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10</field>
+        <field name="name">OBRIGACOES SOCIAIS</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_211001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10.01</field>
+        <field name="name">OBRIGACOES SOCIAIS</field>
+        <field name="parent_id" ref="coa_reobote_2110"/>
+    </record>
+    <record id="coa_reobote_211001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10.01.000.0000001</field>
+        <field name="name">INSS a Recolher</field>
+        <field name="parent_id" ref="coa_reobote_211001"/>
+    </record>
+    <record id="coa_reobote_211001002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10.01.000.0000002</field>
+        <field name="name">FGTS a Recolher</field>
+        <field name="parent_id" ref="coa_reobote_211001"/>
+    </record>
+    <record id="coa_reobote_211001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10.01.000.0000004</field>
+        <field name="name">Contribuicao Sindical</field>
+        <field name="parent_id" ref="coa_reobote_211001"/>
+    </record>
+    <record id="coa_reobote_211001009" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.10.01.000.0000009</field>
+        <field name="name">Mensalidade Assistencial</field>
+        <field name="parent_id" ref="coa_reobote_211001"/>
+    </record>
+    <record id="coa_reobote_2115" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15</field>
+        <field name="name">OBRIGACOES FISCAIS</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_211501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01</field>
+        <field name="name">OBRIGACOES FISCAIS</field>
+        <field name="parent_id" ref="coa_reobote_2115"/>
+    </record>
+    <record id="coa_reobote_211501002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000002</field>
+        <field name="name">IPI a Recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_211501003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000003</field>
+        <field name="name">ICMS a Recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_211501007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000007</field>
+        <field name="name">PIS a recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_211501008" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000008</field>
+        <field name="name">COFINS a recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_211501014" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000014</field>
+        <field name="name">IRPJ presumido a recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_211501015" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.15.01.000.0000015</field>
+        <field name="name">CSLL presumido a recolher</field>
+        <field name="parent_id" ref="coa_reobote_211501"/>
+    </record>
+    <record id="coa_reobote_2120" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20</field>
+        <field name="name">RETENCOES A RECOLHER</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_212001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01</field>
+        <field name="name">RETENCOES A RECOLHER</field>
+        <field name="parent_id" ref="coa_reobote_2120"/>
+    </record>
+    <record id="coa_reobote_212001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000001</field>
+        <field name="name">IRRF s/Salario - cod 0561</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+    <record id="coa_reobote_212001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000004</field>
+        <field name="name">IRRF s/servico - PJ - cod 1708</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+    <record id="coa_reobote_212001005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000005</field>
+        <field name="name">IRRF s/Alugueis - cod 3208</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+    <record id="coa_reobote_212001009" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000009</field>
+        <field name="name">ISS Retido Lei 8468 a Recolher</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+    <record id="coa_reobote_212001010" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000010</field>
+        <field name="name">INSS Retido Lei 9711</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+   <record id="coa_reobote_212001011" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.20.01.000.0000011</field>
+        <field name="name">Retencao CSLL/PIS/COFINS - Lei 10833/03</field>
+        <field name="parent_id" ref="coa_reobote_212001"/>
+    </record>
+    <record id="coa_reobote_2130" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.30</field>
+        <field name="name">SALARIOS A PAGAR</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_213001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.30.01</field>
+        <field name="name">SALARIOS A PAGAR</field>
+        <field name="parent_id" ref="coa_reobote_2130"/>
+    </record>
+    <record id="coa_reobote_213001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.30.01.000.0000001</field>
+        <field name="name">Salarios a Pagar</field>
+        <field name="parent_id" ref="coa_reobote_213001"/>
+    </record>
+    <record id="coa_reobote_213001002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.30.01.000.0000002</field>
+        <field name="name">Rescisao Contrato de Trabalho</field>
+        <field name="parent_id" ref="coa_reobote_213001"/>
+    </record>
+    <record id="coa_reobote_213001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.30.01.000.0000004</field>
+        <field name="name">Pensao Alimenticia</field>
+        <field name="parent_id" ref="coa_reobote_213001"/>
+    </record>
+    <record id="coa_reobote_2135" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.35</field>
+        <field name="name">PRO-LABORE A PAGAR</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_213501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.35.01</field>
+        <field name="name">PRO-LABORE A PAGAR</field>
+        <field name="parent_id" ref="coa_reobote_2135"/>
+    </record>
+    <record id="coa_reobote_213501001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.35.01.000.0000001</field>
+        <field name="name">Pro-labore a Pagar</field>
+        <field name="parent_id" ref="coa_reobote_213501"/>
+    </record>
+    <record id="coa_reobote_2140" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40</field>
+        <field name="name">PROVISOES DIVERSAS</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
+    </record>
+    <record id="coa_reobote_214010" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10</field>
+        <field name="name">PROVISOES TRABALHISTAS</field>
+        <field name="parent_id" ref="coa_reobote_2140"/>
+    </record>
+    <record id="coa_reobote_214010001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000001</field>
+        <field name="name">Provisao de Ferias a Pagar</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_214010002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000002</field>
+        <field name="name">Provisao de 13º salario a Pagar</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_214010003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000003</field>
+        <field name="name">Provisao de Inss s/Ferias</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_214010004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000004</field>
+        <field name="name">Provisao de Inss s/13º Salario</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_214010005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000005</field>
+        <field name="name">Provisao de Fgts s/Ferias</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_214010006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.40.10.000.0000006</field>
+        <field name="name">Provisao de Fgts s/13º Salario</field>
+        <field name="parent_id" ref="coa_reobote_214010"/>
+    </record>
+    <record id="coa_reobote_2155" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.55</field>
         <field name="name">CONTAS A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_21" />
+        <field name="parent_id" ref="coa_reobote_21"/>
     </record>
-    <record id="coa_generic_2121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.2.1</field>
-        <field name="name">CONTAS A PAGAR OCUPAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_212" />
+    <record id="coa_reobote_215501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.55.01</field>
+        <field name="name">CONTAS A PAGAR</field>
+        <field name="parent_id" ref="coa_reobote_2155"/>
     </record>
-    <record id="coa_generic_213" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.3</field>
-        <field name="name">PRÓ-LABORE A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_21" />
+    <record id="coa_reobote_215501003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.55.01.000.0000003</field>
+        <field name="name">Alugueis a Pagar</field>
+        <field name="parent_id" ref="coa_reobote_215501"/>
     </record>
-    <record id="coa_generic_2131" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.3.1</field>
-        <field name="name">PRÓ-LABORE A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_213" />
+    <record id="coa_reobote_2175" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75</field>
+        <field name="name">EMPRESTIMOS E FINANCIAMENTOS</field>
+        <field name="parent_id" ref="coa_reobote_21"/>
     </record>
-    <record id="coa_generic_214" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.4</field>
-        <field name="name">EMPRÉSTIMOS BANCÁRIOS</field>
-        <field name="parent_id" ref="coa_generic_21" />
+    <record id="coa_reobote_217501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.01</field>
+        <field name="name">BANCOS C/GARANTIDA</field>
+        <field name="parent_id" ref="coa_reobote_2175"/>
     </record>
-    <record id="coa_generic_2141" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.4.1</field>
-        <field name="name">EMPRÉSTIMOS BANCÁRIOS</field>
-        <field name="parent_id" ref="coa_generic_214" />
+    <record id="coa_reobote_217501004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.01.000.0000004</field>
+        <field name="name">Banco Itau S/A</field>
+        <field name="parent_id" ref="coa_reobote_217501"/>
     </record>
-    <record id="coa_generic_2142" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.4.2</field>
-        <field name="name">(-) ENCARGOS FINANCEIROS A TRANSCORRER</field>
-        <field name="parent_id" ref="coa_generic_214" />
+    <record id="coa_reobote_217505" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.05</field>
+        <field name="name">EMPRESTIMOS BANCARIOS</field>
+        <field name="parent_id" ref="coa_reobote_2175"/>
     </record>
-    <record id="coa_generic_215" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.5</field>
-        <field name="name">SALÁRIOS A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_21" />
+    <record id="coa_reobote_217505003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.05.000.0000003</field>
+        <field name="name">Empréstimos Banco do Brasil</field>
+        <field name="parent_id" ref="coa_reobote_217505"/>
     </record>
-    <record id="coa_generic_2151" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.5.1</field>
-        <field name="name">SALÁRIOS A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_215" />
+    <record id="coa_reobote_217505007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.05.000.0000007</field>
+        <field name="name">Empréstimos Banco Itau</field>
+        <field name="parent_id" ref="coa_reobote_217505"/>
     </record>
-    <record id="coa_generic_216" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.6</field>
-        <field name="name">OBRIGAÇÕES TRABALHISTAS</field>
-        <field name="parent_id" ref="coa_generic_21" />
+    <record id="coa_reobote_217505383" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.05.000.0000383</field>
+        <field name="name">Capital de Giro Bco Itau - 3151670696</field>
+        <field name="parent_id" ref="coa_reobote_217505"/>
     </record>
-    <record id="coa_generic_2161" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.6.1</field>
-        <field name="name">OBRIGAÇÕES TRABALHISTAS</field>
-        <field name="parent_id" ref="coa_generic_216" />
+    <record id="coa_reobote_217505384" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.05.000.0000384</field>
+        <field name="name">(-) Encargos Capital de Giro Bco Itau - 3151670696</field>
+        <field name="parent_id" ref="coa_reobote_217505"/>
     </record>
-    <record id="coa_generic_217" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.7</field>
-        <field name="name">OBRIGAÇÕES TRIBUTÁRIAS</field>
-        <field name="parent_id" ref="coa_generic_21" />
+    <record id="coa_reobote_217530" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.30</field>
+        <field name="name">FINANCIAMENTOS</field>
+        <field name="parent_id" ref="coa_reobote_2175"/>
     </record>
-    <record id="coa_generic_2171" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.7.1</field>
-        <field name="name">OBRIGAÇÕES TRIBUTÁRIAS</field>
-        <field name="parent_id" ref="coa_generic_217" />
+<record id="coa_reobote_217530112" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.1.75.30.000.0000112</field>
+        <field name="name">Banco Itau S/A</field>
+        <field name="parent_id" ref="coa_reobote_217530"/>
     </record>
-    <record id="coa_generic_218" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.8</field>
-        <field name="name">PROVISÕES</field>
-        <field name="parent_id" ref="coa_generic_21" />
-    </record>
-    <record id="coa_generic_2181" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.8.1</field>
-        <field name="name">PROVISÕES TRABALHISTAS</field>
-        <field name="parent_id" ref="coa_generic_218" />
-    </record>
-    <record id="coa_generic_2182" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.1.8.2</field>
-        <field name="name">PROVISÕES TRABALHISTAS</field>
-        <field name="parent_id" ref="coa_generic_218" />
-    </record>
-    <record id="coa_generic_22" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_22" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">2.2</field>
-        <field name="name">NÃO CIRCULANTE</field>
-        <field name="parent_id" ref="coa_generic_2" />
+        <field name="name">PASSIVO NAO CIRCULANTE</field>
+        <field name="parent_id" ref="coa_reobote_2"/>
     </record>
-    <record id="coa_generic_221" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.1</field>
-        <field name="name">FINANCIAMENTOS BANCÁRIOS</field>
-        <field name="parent_id" ref="coa_generic_22" />
+    <record id="coa_reobote_2201" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01</field>
+        <field name="name">PASSIVO NÃO CIRCULANTE</field>
+        <field name="parent_id" ref="coa_reobote_22"/>
     </record>
-    <record id="coa_generic_2211" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.1.1</field>
-        <field name="name">FINANCIAMENTOS BANCÁRIOS</field>
-        <field name="parent_id" ref="coa_generic_221" />
+    <record id="coa_reobote_220101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01</field>
+        <field name="name">EMPRESTIMOS E FINANCIAMENTOS</field>
+        <field name="parent_id" ref="coa_reobote_2201"/>
     </record>
-    <record id="coa_generic_222" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.2</field>
-        <field name="name">CONTAS A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_22" />
+    <record id="coa_reobote_220101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.001</field>
+        <field name="name">EMPRESTIMOS</field>
+        <field name="parent_id" ref="coa_reobote_220101"/>
     </record>
-    <record id="coa_generic_2221" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.2.1</field>
-        <field name="name">CONTAS A PAGAR</field>
-        <field name="parent_id" ref="coa_generic_222" />
+    <record id="coa_reobote_220101001008" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.001.0000008</field>
+        <field name="name">Empréstimos Banco Itau</field>
+        <field name="parent_id" ref="coa_reobote_220101001"/>
     </record>
-    <record id="coa_generic_227" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.7</field>
-        <field name="name">RESULTADOS DIFERIDOS</field>
-        <field name="parent_id" ref="coa_generic_22" />
+    <record id="coa_reobote_220101001113" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.001.0000113</field>
+        <field name="name">Itaú Giro FGI</field>
+        <field name="parent_id" ref="coa_reobote_220101001"/>
     </record>
-    <record id="coa_generic_2271" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.7.1</field>
-        <field name="name">RECEITAS DIFERIDAS</field>
-        <field name="parent_id" ref="coa_generic_227" />
+    <record id="coa_reobote_220101001114" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.001.0000114</field>
+        <field name="name">(-) Juros a Apropriar - Itaú Giro FGI</field>
+        <field name="parent_id" ref="coa_reobote_220101001"/>
     </record>
-    <record id="coa_generic_2272" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.7.2</field>
-        <field name="name">(-) CUSTOS DIFERIDOS</field>
-        <field name="parent_id" ref="coa_generic_227" />
+ <record id="coa_reobote_220101014" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.014.0000000</field>
+        <field name="name">Capital de Giro Bco Itau - 3151670696</field>
+        <field name="parent_id" ref="coa_reobote_220101"/>
     </record>
-    <record id="coa_generic_2273" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.2.7.3</field>
-        <field name="name">(-) DESPESAS DIFERIDAS</field>
-        <field name="parent_id" ref="coa_generic_227" />
+    <record id="coa_reobote_220101015" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.2.01.01.015.0000000</field>
+        <field name="name">(-) Encargos Capital de Giro Bco Itau - 3151670696</field>
+        <field name="parent_id" ref="coa_reobote_220101"/>
     </record>
-    <record id="coa_generic_24" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4</field>
-        <field name="name">PATRIMÔNIO LÍQUIDO</field>
-        <field name="parent_id" ref="coa_generic_2" />
+    <record id="coa_reobote_23" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3</field>
+        <field name="name">PATRIMONIO LIQUIDO</field>
+        <field name="parent_id" ref="coa_reobote_2"/>
     </record>
-    <record id="coa_generic_241" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.1</field>
-        <field name="name">CAPITAL SOCIAL REALIZADO</field>
-        <field name="parent_id" ref="coa_generic_24" />
+    <record id="coa_reobote_2301" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.01</field>
+        <field name="name">CAPITAL SOCIAL</field>
+        <field name="parent_id" ref="coa_reobote_23"/>
     </record>
-    <record id="coa_generic_2411" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.1.1</field>
-        <field name="name">CAPITAL SOCIAL SUBSCRITO</field>
-        <field name="parent_id" ref="coa_generic_241" />
+    <record id="coa_reobote_230101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.01.01</field>
+        <field name="name">CAPITAL SOCIAL</field>
+        <field name="parent_id" ref="coa_reobote_2301"/>
     </record>
-    <record id="coa_generic_2412" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.1.2</field>
-        <field name="name">(-) CAPITAL SOCIAL A REALIZAR</field>
-        <field name="parent_id" ref="coa_generic_241" />
+    <record id="coa_reobote_230101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.01.01.000.0000001</field>
+        <field name="name">Capital Social</field>
+        <field name="parent_id" ref="coa_reobote_230101"/>
     </record>
-    <record id="coa_generic_242" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.2</field>
-        <field name="name">RESERVAS</field>
-        <field name="parent_id" ref="coa_generic_24" />
-    </record>
-    <record id="coa_generic_2421" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.2.1</field>
-        <field name="name">RESERVAS DE CAPITAL</field>
-        <field name="parent_id" ref="coa_generic_242" />
-    </record>
-    <record id="coa_generic_2422" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.2.2</field>
-        <field name="name">AJUSTES DE AVALIAÇÃO PATRIMONIAL</field>
-        <field name="parent_id" ref="coa_generic_242" />
-    </record>
-    <record id="coa_generic_2423" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.2.3</field>
+    <record id="coa_reobote_2304" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.04</field>
         <field name="name">RESERVAS DE LUCROS</field>
-        <field name="parent_id" ref="coa_generic_242" />
+        <field name="parent_id" ref="coa_reobote_23"/>
     </record>
-    <record id="coa_generic_243" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.3</field>
-        <field name="name">QUOTAS EM TESOURARIA</field>
-        <field name="parent_id" ref="coa_generic_24" />
+    <record id="coa_reobote_230401" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.04.01</field>
+        <field name="name">RESERVAS DE LUCROS</field>
+        <field name="parent_id" ref="coa_reobote_2304"/>
     </record>
-    <record id="coa_generic_2431" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.3.1</field>
-        <field name="name">QUOTAS EM TESOURARIA</field>
-        <field name="parent_id" ref="coa_generic_243" />
+    <record id="coa_reobote_230401001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.04.01.000.0000001</field>
+        <field name="name">Reserva de Lucros</field>
+        <field name="parent_id" ref="coa_reobote_230401"/>
     </record>
-    <record id="coa_generic_244" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.4</field>
-        <field name="name">LUCROS OU PREJUIZOS ACUMULADOS</field>
-        <field name="parent_id" ref="coa_generic_24" />
+    <record id="coa_reobote_2309" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09</field>
+        <field name="name">DISTRIBUICAO DE LUCROS</field>
+        <field name="parent_id" ref="coa_reobote_23"/>
     </record>
-    <record id="coa_generic_2441" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.4.4.1</field>
-        <field name="name">LUCROS OU PREJUIZOS ACUMULADOS</field>
-        <field name="parent_id" ref="coa_generic_244" />
+    <record id="coa_reobote_230901" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09.01</field>
+        <field name="name">DISTRIBUICAO DE LUCROS</field>
+        <field name="parent_id" ref="coa_reobote_2309"/>
     </record>
-    <record id="coa_generic_29" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9</field>
-        <field name="name">CONTAS DE COMPENSAÇÃO PASSIVO</field>
-        <field name="parent_id" ref="coa_generic_2" />
+    <record id="coa_reobote_230901001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09.01.001</field>
+        <field name="name">DISTRIBUICAO DE LUCROS - PF</field>
+        <field name="parent_id" ref="coa_reobote_230901"/>
     </record>
-    <record id="coa_generic_291" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9.1</field>
-        <field name="name">OBRIGAÇÕES</field>
-        <field name="parent_id" ref="coa_generic_29" />
+    <record id="coa_reobote_230901001416" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09.01.001.0000416</field>
+        <field name="name">004.573.728-26 Eudario Souza da Silva</field>
+        <field name="parent_id" ref="coa_reobote_230901001"/>
     </record>
-    <record id="coa_generic_2911" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9.1.1</field>
-        <field name="name">REMESSA DE BENS PARA TERCEIROS</field>
-        <field name="parent_id" ref="coa_generic_291" />
+    <record id="coa_reobote_230901001417" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09.01.001.0000417</field>
+        <field name="name">048.762.158-12 Telma Meire Tarkanny</field>
+        <field name="parent_id" ref="coa_reobote_230901001"/>
     </record>
-    <record id="coa_generic_2912" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9.1.2</field>
-        <field name="name">ESTOQUES EM PODER DE TERCEIROS</field>
-        <field name="parent_id" ref="coa_generic_291" />
+    <record id="coa_reobote_230901001479" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.09.01.001.0000479</field>
+        <field name="name">353.810.248-19 Felipe Tarkany Silva</field>
+        <field name="parent_id" ref="coa_reobote_230901001"/>
     </record>
-    <record id="coa_generic_2913" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9.1.3</field>
-        <field name="name">REMESSAS DE VENDAS</field>
-        <field name="parent_id" ref="coa_generic_291" />
+    <record id="coa_reobote_2310" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10</field>
+        <field name="name">LUCROS/PREJUIZOS ACUMULADOS</field>
+        <field name="parent_id" ref="coa_reobote_23"/>
     </record>
-    <record id="coa_generic_2914" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">2.9.1.4</field>
-        <field name="name">REMESSA DE VENDA À ORDEM PARA TERCEIROS</field>
-        <field name="parent_id" ref="coa_generic_291" />
+    <record id="coa_reobote_231001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01</field>
+        <field name="name">LUCROS/PREJUIZOS ACUMULADOS</field>
+        <field name="parent_id" ref="coa_reobote_2310"/>
     </record>
-    <record id="coa_generic_3" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_231001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01.000.0000001</field>
+        <field name="name">Prejuizos Acumulados</field>
+        <field name="parent_id" ref="coa_reobote_231001"/>
+    </record>
+    <record id="coa_reobote_231001003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01.000.0000003</field>
+        <field name="name">Ajustes de Exercicios Anteriores - Devedor</field>
+        <field name="parent_id" ref="coa_reobote_231001"/>
+    </record>
+    <record id="coa_reobote_231001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01.000.0000004</field>
+        <field name="name">Ajustes de Exercicios Anteriores - Credor</field>
+        <field name="parent_id" ref="coa_reobote_231001"/>
+    </record>
+    <record id="coa_reobote_231001005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01.000.0000005</field>
+        <field name="name">Lucro Liquido do Exercicio</field>
+        <field name="parent_id" ref="coa_reobote_231001"/>
+    </record>
+<record id="coa_reobote_231001006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">2.3.10.01.000.0000006</field>
+        <field name="name">Prejuizo Liquido do Exercicio</field>
+        <field name="parent_id" ref="coa_reobote_231001"/>
+    </record>
+    <record id="coa_reobote_3" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">3</field>
-        <field name="name">CUSTOS</field>
+        <field name="name">CONTAS DE RESULTADO CREDORAS</field>
     </record>
-    <record id="coa_generic_31" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
+    <record id="coa_reobote_31" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">3.1</field>
-        <field name="name">CUSTOS DE PRODUÇÃO</field>
-        <field name="parent_id" ref="coa_generic_3" />
+        <field name="name">CONTAS DE RECEITAS</field>
+        <field name="parent_id" ref="coa_reobote_3"/>
     </record>
-    <record id="coa_generic_311" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.1</field>
-        <field name="name">CUSTOS INDUSTRIAIS</field>
-        <field name="parent_id" ref="coa_generic_31" />
-    </record>
-    <record id="coa_generic_3111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.1.1</field>
-        <field name="name">INSUMOS</field>
-        <field name="parent_id" ref="coa_generic_311" />
-    </record>
-    <record id="coa_generic_3112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.1.2</field>
-        <field name="name">MÃO-DE-OBRA DIRETA</field>
-        <field name="parent_id" ref="coa_generic_311" />
-    </record>
-    <record id="coa_generic_3113" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.1.3</field>
-        <field name="name">OUTROS CUSTOS DIRETOS</field>
-        <field name="parent_id" ref="coa_generic_311" />
-    </record>
-    <record id="coa_generic_3119" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.1.9</field>
-        <field name="name">CUSTOS INDIRETOS DE FABRICAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_311" />
-    </record>
-    <record id="coa_generic_312" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.2</field>
-        <field name="name">CUSTOS DE PRESTAÇÃO DE SERVIÇOS</field>
-        <field name="parent_id" ref="coa_generic_31" />
-    </record>
-    <record id="coa_generic_3121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.2.1</field>
-        <field name="name">CONSUMO DE MATERIAIS</field>
-        <field name="parent_id" ref="coa_generic_312" />
-    </record>
-    <record id="coa_generic_3122" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.2.2</field>
-        <field name="name">MÃO-DE-OBRA DIRETA</field>
-        <field name="parent_id" ref="coa_generic_312" />
-    </record>
-    <record id="coa_generic_3123" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.2.3</field>
-        <field name="name">OUTROS CUSTOS DIRETOS</field>
-        <field name="parent_id" ref="coa_generic_312" />
-    </record>
-    <record id="coa_generic_3129" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">3.1.2.9</field>
-        <field name="name">CUSTOS INDIRETOS DE PRESTAÇÃO DE SERVIÇOS</field>
-        <field name="parent_id" ref="coa_generic_312" />
-    </record>
-    <record id="coa_generic_4" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">4</field>
-        <field name="name">PRODUÇÃO</field>
-    </record>
-    <record id="coa_generic_41" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">4.1</field>
-        <field name="name">PRODUÇÃO</field>
-        <field name="parent_id" ref="coa_generic_4" />
-    </record>
-    <record id="coa_generic_411" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">4.1.1</field>
-        <field name="name">PRODUÇÃO</field>
-        <field name="parent_id" ref="coa_generic_41" />
-    </record>
-    <record id="coa_generic_4111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">4.1.1.1</field>
-        <field name="name">PRODUÇÃO</field>
-        <field name="parent_id" ref="coa_generic_411" />
-    </record>
-    <record id="coa_generic_5" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5</field>
-        <field name="name">DESPESAS</field>
-    </record>
-    <record id="coa_generic_51" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1</field>
-        <field name="name">DESPESAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_5" />
-    </record>
-    <record id="coa_generic_511" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1</field>
-        <field name="name">DESPESAS OPERACIONAIS</field>
-        <field name="parent_id" ref="coa_generic_51" />
-    </record>
-    <record id="coa_generic_5111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.1</field>
-        <field name="name">CUSTO DAS VENDAS</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.2</field>
-        <field name="name">DESPESAS COM PESSOAL</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5113" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.3</field>
-        <field name="name">DESPESAS ADMINISTRATIVAS</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5114" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.4</field>
-        <field name="name">DESPESAS DE COMERCIALIZAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5115" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.5</field>
-        <field name="name">DESPESAS TRIBUTÁRIAS</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5116" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.6</field>
-        <field name="name">DESPESAS FINANCEIRAS</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5117" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.7</field>
-        <field name="name">DEPRECIAÇÃO E AMORTIZAÇÃO</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_5118" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.1.8</field>
-        <field name="name">PERDAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_511" />
-    </record>
-    <record id="coa_generic_512" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.2</field>
-        <field name="name">DESPESAS NÃO OPERACIONAIS</field>
-        <field name="parent_id" ref="coa_generic_51" />
-    </record>
-    <record id="coa_generic_5121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.2.1</field>
-        <field name="name">DESPESAS DIVERSAS INDEDUTÍVEIS</field>
-        <field name="parent_id" ref="coa_generic_512" />
-    </record>
-    <record id="coa_generic_5122" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">5.1.2.2</field>
-        <field name="name">VALOR RESIDUAL DO ATIVO PERMANENTE</field>
-        <field name="parent_id" ref="coa_generic_512" />
-    </record>
-    <record id="coa_generic_6" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6</field>
-        <field name="name">RECEITAS</field>
-    </record>
-    <record id="coa_generic_61" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1</field>
-        <field name="name">RECEITAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_6" />
-    </record>
-    <record id="coa_generic_611" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.1</field>
+    <record id="coa_reobote_3101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01</field>
         <field name="name">RECEITAS OPERACIONAIS</field>
-        <field name="parent_id" ref="coa_generic_61" />
+        <field name="parent_id" ref="coa_reobote_31"/>
     </record>
-    <record id="coa_generic_6111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.1.1</field>
-        <field name="name">RECEITA BRUTA DE VENDAS</field>
-        <field name="parent_id" ref="coa_generic_611" />
+    <record id="coa_reobote_310101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.01</field>
+        <field name="name">VENDAS DE PRODUTOS</field>
+        <field name="parent_id" ref="coa_reobote_3101"/>
     </record>
-    <record id="coa_generic_6112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.1.2</field>
-        <field name="name">(-) DEDUÇÕES DA RECEITA BRUTA</field>
-        <field name="parent_id" ref="coa_generic_611" />
+    <record id="coa_reobote_310101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.01.001</field>
+        <field name="name">VENDAS DE PRODUTOS</field>
+        <field name="parent_id" ref="coa_reobote_310101"/>
     </record>
-    <record id="coa_generic_6113" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.1.3</field>
-        <field name="name">(-) DEVOLUÇÕES/ANULAÇÕES DE VENDAS</field>
-        <field name="parent_id" ref="coa_generic_611" />
+    <record id="coa_reobote_310101001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.01.001.0000001</field>
+        <field name="name">Vendas De Produtos</field>
+        <field name="parent_id" ref="coa_reobote_310101001"/>
     </record>
-    <record id="coa_generic_612" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.2</field>
+    <record id="coa_reobote_310110" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.10</field>
+        <field name="name">CANCELAMENTO/DEVOLUCOES</field>
+        <field name="parent_id" ref="coa_reobote_3101"/>
+    </record>
+    <record id="coa_reobote_310110001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.10.000.0000001</field>
+        <field name="name">Vendas Canceladas - Produtos</field>
+        <field name="parent_id" ref="coa_reobote_310110"/>
+    </record>
+    <record id="coa_reobote_310115" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.15</field>
+        <field name="name">( - ) IMPOSTOS S/VENDAS E SERVIÇOS</field>
+        <field name="parent_id" ref="coa_reobote_3101"/>
+    </record>
+    <record id="coa_reobote_310115001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.15.000.0000001</field>
+        <field name="name">( - ) ICMS s/ Vendas</field>
+        <field name="parent_id" ref="coa_reobote_310115"/>
+    </record>
+    <record id="coa_reobote_310115003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.15.000.0000003</field>
+        <field name="name">( - ) PIS</field>
+        <field name="parent_id" ref="coa_reobote_310115"/>
+    </record>
+    <record id="coa_reobote_310115005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.15.000.0000005</field>
+        <field name="name">( - ) COFINS</field>
+        <field name="parent_id" ref="coa_reobote_310115"/>
+    </record>
+    <record id="coa_reobote_310118" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.18</field>
+        <field name="name">IMPOSTOS S/VENDAS E SERVIÇOS CANCELADOS</field>
+        <field name="parent_id" ref="coa_reobote_3101"/>
+    </record>
+    <record id="coa_reobote_310118001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.18.000.0000001</field>
+        <field name="name">ICMS s/ Vendas Canceladas</field>
+        <field name="parent_id" ref="coa_reobote_310118"/>
+    </record>
+    <record id="coa_reobote_310120" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20</field>
+        <field name="name">RECEITAS OPERACIONAIS FINANCEIRAS</field>
+        <field name="parent_id" ref="coa_reobote_3101"/>
+    </record>
+    <record id="coa_reobote_310120001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20.001</field>
+        <field name="name">VARIACAO MONETARIA ATIVA</field>
+        <field name="parent_id" ref="coa_reobote_310120"/>
+    </record>
+    <record id="coa_reobote_310120001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20.001.0000001</field>
+        <field name="name">Juros Recebidos s/duplicatas</field>
+        <field name="parent_id" ref="coa_reobote_310120001"/>
+    </record>
+    <record id="coa_reobote_310120002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20.002</field>
         <field name="name">RECEITAS FINANCEIRAS</field>
-        <field name="parent_id" ref="coa_generic_61" />
+        <field name="parent_id" ref="coa_reobote_310120"/>
     </record>
-    <record id="coa_generic_6121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.2.1</field>
-        <field name="name">RECEITAS FINANCEIRAS</field>
-        <field name="parent_id" ref="coa_generic_612" />
+    <record id="coa_reobote_310120002001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20.002.0000001</field>
+        <field name="name">Receitas Aplicacoes Financeiras</field>
+        <field name="parent_id" ref="coa_reobote_310120002"/>
     </record>
-    <record id="coa_generic_613" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.3</field>
-        <field name="name">OUTRAS RECEITAS</field>
-        <field name="parent_id" ref="coa_generic_61" />
+    <record id="coa_reobote_310120002002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">3.1.01.20.002.0000002</field>
+        <field name="name">Descontos Obtidos</field>
+        <field name="parent_id" ref="coa_reobote_310120002"/>
     </record>
-    <record id="coa_generic_6131" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.3.1</field>
-        <field name="name">RECEITAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_613" />
+    <record id="coa_reobote_4" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4</field>
+        <field name="name">CONTAS DE RESULTADO DEVEDORAS</field>
     </record>
-    <record id="coa_generic_616" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.6</field>
-        <field name="name">RECEITAS NÃO OPERACIONAIS</field>
-        <field name="parent_id" ref="coa_generic_61" />
+    <record id="coa_reobote_41" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1</field>
+        <field name="name">CUSTOS</field>
+        <field name="parent_id" ref="coa_reobote_4"/>
     </record>
-    <record id="coa_generic_6161" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.6.1</field>
-        <field name="name">RECEITAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_616" />
+    <record id="coa_reobote_4101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01</field>
+        <field name="name">CUSTO DO PRODUTO VENDIDO</field>
+        <field name="parent_id" ref="coa_reobote_41"/>
     </record>
-    <record id="coa_generic_6162" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">6.1.6.2</field>
-        <field name="name">RECEITAS COM ALIENAÇÃO DE ATIVO IMOBILIZADO</field>
-        <field name="parent_id" ref="coa_generic_616" />
+    <record id="coa_reobote_410101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.01</field>
+        <field name="name">AQUISICOES DE MATERIA PRIMA</field>
+        <field name="parent_id" ref="coa_reobote_4101"/>
     </record>
-    <record id="coa_generic_7" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7</field>
-        <field name="name">CONTAS DE APURAÇÃO</field>
+    <record id="coa_reobote_410101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.01.000.0000001</field>
+        <field name="name">Compra Materia Prima</field>
+        <field name="parent_id" ref="coa_reobote_410101"/>
     </record>
-    <record id="coa_generic_71" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1</field>
-        <field name="name">CONTAS DIVERSAS</field>
-        <field name="parent_id" ref="coa_generic_7" />
+    <record id="coa_reobote_410101002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.01.000.0000002</field>
+        <field name="name">(-) Devolucao Materia Prima</field>
+        <field name="parent_id" ref="coa_reobote_410101"/>
     </record>
-    <record id="coa_generic_711" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1.1</field>
-        <field name="name">BALANÇO</field>
-        <field name="parent_id" ref="coa_generic_71" />
+    <record id="coa_reobote_410110" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.10</field>
+        <field name="name">ESTOQUE INICIAL</field>
+        <field name="parent_id" ref="coa_reobote_4101"/>
     </record>
-    <record id="coa_generic_7111" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1.1.1</field>
-        <field name="name">BALANÇO DE ABERTURA</field>
-        <field name="parent_id" ref="coa_generic_711" />
+    <record id="coa_reobote_410110001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.10.000.0000001</field>
+        <field name="name">Estoque Inicial Materia Prima</field>
+        <field name="parent_id" ref="coa_reobote_410110"/>
     </record>
-    <record id="coa_generic_7112" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1.1.2</field>
-        <field name="name">BALANÇO DE ENCERRAMENTO</field>
-        <field name="parent_id" ref="coa_generic_711" />
+    <record id="coa_reobote_410111" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.11</field>
+        <field name="name">(-) ESTOQUE FINAL (INVENTARIO)</field>
+        <field name="parent_id" ref="coa_reobote_4101"/>
     </record>
-    <record id="coa_generic_712" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1.2</field>
-        <field name="name">RESULTADO</field>
-        <field name="parent_id" ref="coa_generic_71" />
+<record id="coa_reobote_410111001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.11.000.0000001</field>
+        <field name="name">(-) Estoque Final Materia Prima</field>
+        <field name="parent_id" ref="coa_reobote_410111"/>
     </record>
-    <record id="coa_generic_7121" model="account.group.template">
-        <field name="chart_template_id" ref="l10n_br_coa_generic_template" />
-        <field name="code_prefix_start">7.1.2.1</field>
-        <field name="name">RESULTADO DO EXERCÍCIO</field>
-        <field name="parent_id" ref="coa_generic_712" />
+    <record id="coa_reobote_410115" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15</field>
+        <field name="name">DEMAIS CUSTOS C/PRODUCAO</field>
+        <field name="parent_id" ref="coa_reobote_4101"/>
+    </record>
+    <record id="coa_reobote_410115001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.001</field>
+        <field name="name">REMUNERACAO A DIRIGENTES</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.001.0000001</field>
+        <field name="name">Pro-labore</field>
+        <field name="parent_id" ref="coa_reobote_410115001"/>
+    </record>
+    <record id="coa_reobote_410115002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002</field>
+        <field name="name">CUSTO C/ PESSOAL</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115002001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000001</field>
+        <field name="name">Ordenados e Salarios</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000002</field>
+        <field name="name">Acordo Trabalhistas</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000003</field>
+        <field name="name">Indenizacoes</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000004</field>
+        <field name="name">Aviso Previo</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002009" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000009</field>
+        <field name="name">Provisao 13º Salario</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002010" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000010</field>
+        <field name="name">Provisao para Ferias</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115002011" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.002.0000011</field>
+        <field name="name">(-) Estorno Provisão para Férias</field>
+        <field name="parent_id" ref="coa_reobote_410115002"/>
+    </record>
+    <record id="coa_reobote_410115003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003</field>
+        <field name="name">ENCARGOS SOCIAIS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115003001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000001</field>
+        <field name="name">INSS</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000002</field>
+        <field name="name">FGTS</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000003</field>
+        <field name="name">Provisao p/ INSS s/ ferias e 13º salario</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000004</field>
+        <field name="name">Provisao p/ FGTS s/ ferias e 13º salario</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000005</field>
+        <field name="name">FGTS Rescisório</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000006</field>
+        <field name="name">(-) Estorno Provisão p/ INSS s/ férias e 13º salário</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115003007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.003.0000007</field>
+        <field name="name">(-) Estorno Provisão p/ FGTS s/ férias e 13º salário</field>
+        <field name="parent_id" ref="coa_reobote_410115003"/>
+    </record>
+    <record id="coa_reobote_410115004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.004</field>
+        <field name="name">BENEFICIOS AOS EMPREGADOS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115004001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.004.0000001</field>
+        <field name="name">Vale transporte</field>
+        <field name="parent_id" ref="coa_reobote_410115004"/>
+    </record>
+    <record id="coa_reobote_410115004002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.004.0000002</field>
+        <field name="name">Medicamentos e Assistência Medica</field>
+        <field name="parent_id" ref="coa_reobote_410115004"/>
+    </record>
+    <record id="coa_reobote_410115004003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.004.0000003</field>
+        <field name="name">Programa de Alimentacao do Trabalhador</field>
+        <field name="parent_id" ref="coa_reobote_410115004"/>
+    </record>
+    <record id="coa_reobote_410115004005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.004.0000005</field>
+        <field name="name">Seguros de Vida</field>
+        <field name="parent_id" ref="coa_reobote_410115004"/>
+    </record>
+    <record id="coa_reobote_410115006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.006</field>
+        <field name="name">CURSOS E APERFEICOAMENTO</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115006001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.006.0000001</field>
+        <field name="name">Cursos e Treinamentos</field>
+        <field name="parent_id" ref="coa_reobote_410115006"/>
+    </record>
+    <record id="coa_reobote_410115007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.007</field>
+        <field name="name">SERVICOS PRESTADOS TERCEIROS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115007002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.007.0000002</field>
+        <field name="name">Servicos Prestados - PJ</field>
+        <field name="parent_id" ref="coa_reobote_410115007"/>
+    </record>
+    <record id="coa_reobote_410115007009" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.007.0000009</field>
+        <field name="name">Servicos de Limpeza e Conservacao</field>
+        <field name="parent_id" ref="coa_reobote_410115007"/>
+    </record>
+    <record id="coa_reobote_410115007012" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.007.0000012</field>
+        <field name="name">Servicos Juridicos</field>
+        <field name="parent_id" ref="coa_reobote_410115007"/>
+    </record>
+    <record id="coa_reobote_410115007013" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.007.0000013</field>
+        <field name="name">Servicos Contabeis</field>
+        <field name="parent_id" ref="coa_reobote_410115007"/>
+    </record>
+    <record id="coa_reobote_410115008" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.008</field>
+        <field name="name">COMISSOES E CORRETAGENS S/ VENDAS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115008001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.008.0000001</field>
+        <field name="name">Comissoes e corretagem - PJ</field>
+        <field name="parent_id" ref="coa_reobote_410115008"/>
+    </record>
+    <record id="coa_reobote_410115011" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.011</field>
+        <field name="name">DEPRECIACAO E AMORTIZACAO</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115011001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.011.0000001</field>
+        <field name="name">Encargos Depreciacao</field>
+        <field name="parent_id" ref="coa_reobote_410115011"/>
+    </record>
+    <record id="coa_reobote_410115015" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.015</field>
+        <field name="name">DESPESAS C/OCUPACAO</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115015001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.015.0000001</field>
+        <field name="name">Aluguel - PF</field>
+        <field name="parent_id" ref="coa_reobote_410115015"/>
+    </record>
+    <record id="coa_reobote_410115015003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.015.0000003</field>
+        <field name="name">Aluguel - PJ</field>
+        <field name="parent_id" ref="coa_reobote_410115015"/>
+    </record>
+    <record id="coa_reobote_410115016" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.016</field>
+        <field name="name">MATERIAIS CONSUMIDOS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115016002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.016.0000002</field>
+        <field name="name">Material de Consumo</field>
+        <field name="parent_id" ref="coa_reobote_410115016"/>
+    </record>
+    <record id="coa_reobote_410115016003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.016.0000003</field>
+        <field name="name">Material Higiene/Limpeza</field>
+        <field name="parent_id" ref="coa_reobote_410115016"/>
+    </record>
+    <record id="coa_reobote_410115017" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017</field>
+        <field name="name">OUTROS CUSTOS</field>
+        <field name="parent_id" ref="coa_reobote_410115"/>
+    </record>
+    <record id="coa_reobote_410115017002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000002</field>
+        <field name="name">Viagens e Estadias</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000004</field>
+        <field name="name">Lanches e Refeicoes - Copa e Cozinha</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017005" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000005</field>
+        <field name="name">Seguros</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017011" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000011</field>
+        <field name="name">Contribuicao a Entidade de Classe</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017014" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000014</field>
+        <field name="name">Combustivel / Oleos e Lubrificantes</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017017" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000017</field>
+        <field name="name">Telefone</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017019" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000019</field>
+        <field name="name">Energia Eletrica</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017020" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000020</field>
+        <field name="name">Consumo de Agua</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017024" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000024</field>
+        <field name="name">Comemoracoes e Confraternizacoes</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017027" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000027</field>
+        <field name="name">Condução e Estacionamento</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_410115017033" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.1.01.15.017.0000033</field>
+        <field name="name">Pedágio</field>
+        <field name="parent_id" ref="coa_reobote_410115017"/>
+    </record>
+    <record id="coa_reobote_45" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5</field>
+        <field name="name">DESPESAS</field>
+        <field name="parent_id" ref="coa_reobote_4"/>
+    </record>
+    <record id="coa_reobote_4501" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01</field>
+        <field name="name">DESPESAS OPERACIONAIS</field>
+        <field name="parent_id" ref="coa_reobote_45"/>
+    </record>
+<record id="coa_reobote_450130" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.30</field>
+        <field name="name">IMPOSTOS, TAXAS OUTRAS CONTR. EXCETO IR</field>
+        <field name="parent_id" ref="coa_reobote_4501"/>
+    </record>
+    <record id="coa_reobote_450130002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.30.000.0000002</field>
+        <field name="name">IPTU</field>
+        <field name="parent_id" ref="coa_reobote_450130"/>
+    </record>
+    <record id="coa_reobote_450130007" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.30.000.0000007</field>
+        <field name="name">ICMS</field>
+        <field name="parent_id" ref="coa_reobote_450130"/>
+    </record>
+    <record id="coa_reobote_450130011" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.30.000.0000011</field>
+        <field name="name">Taxas</field>
+        <field name="parent_id" ref="coa_reobote_450130"/>
+    </record>
+    <record id="coa_reobote_450130019" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.30.000.0000019</field>
+        <field name="name">IPI s/ outras saidas</field>
+        <field name="parent_id" ref="coa_reobote_450130"/>
+    </record>
+    <record id="coa_reobote_450140" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.40</field>
+        <field name="name">MULTAS</field>
+        <field name="parent_id" ref="coa_reobote_4501"/>
+    </record>
+    <record id="coa_reobote_450140004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.40.000.0000004</field>
+        <field name="name">Multas Fiscais por Pagto expont. Atras</field>
+        <field name="parent_id" ref="coa_reobote_450140"/>
+    </record>
+    <record id="coa_reobote_450150" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50</field>
+        <field name="name">DESPESAS FINANCEIRAS</field>
+        <field name="parent_id" ref="coa_reobote_4501"/>
+    </record>
+    <record id="coa_reobote_450150001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.001</field>
+        <field name="name">VARIACOES MONETARIAS PASSIVAS</field>
+        <field name="parent_id" ref="coa_reobote_450150"/>
+    </record>
+    <record id="coa_reobote_450150001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.001.0000001</field>
+        <field name="name">Juros s/duplicatas</field>
+        <field name="parent_id" ref="coa_reobote_450150001"/>
+    </record>
+    <record id="coa_reobote_450150001004" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.001.0000004</field>
+        <field name="name">Juros s/ Impostos</field>
+        <field name="parent_id" ref="coa_reobote_450150001"/>
+    </record>
+    <record id="coa_reobote_450150001006" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.001.0000006</field>
+        <field name="name">Juros s/ Emprestimos e financiamentos</field>
+        <field name="parent_id" ref="coa_reobote_450150001"/>
+    </record>
+    <record id="coa_reobote_450150001008" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.001.0000008</field>
+        <field name="name">Descontos Concedidos</field>
+        <field name="parent_id" ref="coa_reobote_450150001"/>
+    </record>
+    <record id="coa_reobote_450150002" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.002</field>
+        <field name="name">OUTRAS DESPESAS FINANCEIRAS</field>
+        <field name="parent_id" ref="coa_reobote_450150"/>
+    </record>
+    <record id="coa_reobote_450150002001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.002.0000001</field>
+        <field name="name">Tarifas Bancarias</field>
+        <field name="parent_id" ref="coa_reobote_450150002"/>
+    </record>
+    <record id="coa_reobote_450150002003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.01.50.002.0000003</field>
+        <field name="name">IOF</field>
+        <field name="parent_id" ref="coa_reobote_450150002"/>
+    </record>
+    <record id="coa_reobote_4580" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.80</field>
+        <field name="name">PROVISOES E PARTICIPACOES</field>
+        <field name="parent_id" ref="coa_reobote_4501"/>
+    </record>
+    <record id="coa_reobote_458001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.80.01</field>
+        <field name="name">PROVISOES IRPJ E CSLL</field>
+        <field name="parent_id" ref="coa_reobote_4580"/>
+    </record>
+    <record id="coa_reobote_458001001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.80.01.000.0000001</field>
+        <field name="name">CSLL s/ Lucro Presumido</field>
+        <field name="parent_id" ref="coa_reobote_458001"/>
+    </record>
+    <record id="coa_reobote_458001003" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">4.5.80.01.000.0000003</field>
+        <field name="name">Imposto de Renda s/ Lucro Presumido</field>
+        <field name="parent_id" ref="coa_reobote_458001"/>
+    </record>
+    <record id="coa_reobote_6" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">6</field>
+        <field name="name">CONTAS TRANSITORIAS</field>
+    </record>
+    <record id="coa_reobote_61" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">6.1</field>
+        <field name="name">CONTAS TRANSIToRIAS</field>
+        <field name="parent_id" ref="coa_reobote_6"/>
+    </record>
+    <record id="coa_reobote_6101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">6.1.01</field>
+        <field name="name">CONTAS PARA ENCERRAMENTO EXERCICIO</field>
+        <field name="parent_id" ref="coa_reobote_61"/>
+    </record>
+    <record id="coa_reobote_610101" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">6.1.01.01</field>
+        <field name="name">ENCERRAMENTO EXERCICIO</field>
+        <field name="parent_id" ref="coa_reobote_6101"/>
+    </record>
+    <record id="coa_reobote_610101001" model="account.group.template">
+        <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
+        <field name="code_prefix_start">6.1.01.01.000.0000001</field>
+        <field name="name">Resultado do Periodo</field>
+        <field name="parent_id" ref="coa_reobote_610101"/>
     </record>
 
 </odoo>

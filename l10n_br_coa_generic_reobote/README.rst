@@ -28,7 +28,7 @@ Plano de Contas para empresas do Regime normal
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Plano de Contas Genérico para Empresas do Regime normal
+Plano de Contas Genérico para Empresas do Regime normal - REOBOTE
 -------------------------------------------------------
 
 O modelo de plano de contas apresentado neste módulo adere às
