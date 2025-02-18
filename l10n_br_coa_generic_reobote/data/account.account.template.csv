@@ -229,7 +229,7 @@ coa_reobote_410115017027,4.1.01.15.017.0000027,Condução e Estacionamento,,expe
 coa_reobote_410115017033,4.1.01.15.017.0000033,Pedágio,,expense,0,l10n_br_coa_generic_template
 coa_reobote_45,4.5,DESPESAS,,expense,0,l10n_br_coa_generic_template
 coa_reobote_4501,4.5.01,DESPESAS OPERACIONAIS,,expense,0,l10n_br_coa_generic_template
-coa_reobote_450130,4.5.01.30,IMPOSTOS, TAXAS OUTRAS CONTR. EXCETO IR,,expense,0,l10n_br_coa_generic_template
+coa_reobote_450130,4.5.01.30,IMPOSTOS - TAXAS OUTRAS CONTR. EXCETO IR,,expense,0,l10n_br_coa_generic_template
 coa_reobote_450130002,4.5.01.30.000.0000002,IPTU,,expense,0,l10n_br_coa_generic_template
 coa_reobote_450130007,4.5.01.30.000.0000007,ICMS,,expense,0,l10n_br_coa_generic_template
 coa_reobote_450130011,4.5.01.30.000.0000011,Taxas,,expense,0,l10n_br_coa_generic_template
