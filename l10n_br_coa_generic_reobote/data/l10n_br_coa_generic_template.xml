@@ -6,9 +6,9 @@
             name="name"
         >Plano de Contas Genérico para Empresas do Regime normal</field>
         <field name="code_digits">2</field>
-        <field name="cash_account_code_prefix">1.1.1.1.</field>
-        <field name="bank_account_code_prefix">1.1.1.2.</field>
-        <field name="transfer_account_code_prefix">1.1.1.2.0</field>
+        <field name="cash_account_code_prefix">1.1.01</field>
+        <field name="bank_account_code_prefix">1.1.01.05.000.</field>
+        <field name="transfer_account_code_prefix">6.1</field>
         <field name="currency_id" ref="base.BRL" />
         <field name="country_id" ref="base.br" />
         <field name="parent_id" ref="l10n_br_coa.l10n_br_coa_template" />
