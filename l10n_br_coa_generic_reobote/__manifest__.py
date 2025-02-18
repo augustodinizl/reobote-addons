@@ -15,7 +15,7 @@
     "depends": ["l10n_br_coa"],
     "data": [
         "data/l10n_br_coa_generic_template.xml",
-        "data/account_group.xml",
+        #"data/account_group.xml",
         "data/account.account.template.csv",
         "data/l10n_br_coa.account.tax.group.account.template.csv",
         "data/account_fiscal_position_template.xml",
