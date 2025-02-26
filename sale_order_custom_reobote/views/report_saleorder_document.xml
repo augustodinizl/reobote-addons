@@ -128,7 +128,7 @@
                                         </t>
                                         <t t-else="">
                                             <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
-                                                <span t-esc="(line.product_id.diametro_externo or '').upper()"/>
+                                                <span t-esc="(line.product_id.diametro_externo.name or '').upper()"/>
                                             </td>
                                         </t>
                                         
