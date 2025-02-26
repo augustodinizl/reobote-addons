@@ -157,7 +157,7 @@
                                             <t-if="line.product_id.comp_tolerancia_maior or line.product_id.comp_tolerancia_menor">    
                                                 <span t-esc="(line.product_id.comp_tolerancia_menor.name or '').upper()"/> / <span t-esc="(line.product_id.comp_tolerancia_maior.name or '').upper()"/>
                                             </t>
-                                            <t t-else=""
+                                            <t t-else="">
                                                 <span t-esc="(line.product_id.comprimento or '').upper()"/>
                                             </t>
                                         </td>
