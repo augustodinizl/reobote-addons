@@ -33,25 +33,25 @@ l10n_br_coa_generic.account_tax_group_account_template_ii;l10n_br_coa.tax_group_
 l10n_br_coa_generic.account_tax_group_account_template_ii;l10n_br_coa.tax_group_ii;ded_refund_account_id;coa_generic_611231;6.1.1.2.31;(-)  II Devolução;;income_other;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;account_id;coa_generic_217105;2.1.7.1.05;PIS a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;refund_account_id;coa_generic_114105;1.1.4.1.05;PIS a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_pis_wh;l10n_br_coa.tax_group_pis_wh;ded_refund_account_id;;;;;;;
 l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;account_id;coa_generic_217104;2.1.7.1.04;COFINS a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;refund_account_id;coa_generic_114104;1.1.4.1.04;COFINS a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_confins_wh;l10n_br_coa.tax_group_cofins_wh;ded_refund_account_id;;;;;;;
 l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;account_id;coa_generic_217108;2.1.7.1.08;ISS a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;refund_account_id;coa_generic_114109;1.1.4.1.09;ISS a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_issqn_wh;l10n_br_coa.tax_group_issqn_wh;ded_refund_account_id;;;;;;;
 l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;account_id;coa_generic_217107;2.1.7.1.07;CSLL a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;refund_account_id;coa_generic_114107;1.1.4.1.07;CSLL a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_csll_wh;l10n_br_coa.tax_group_csll_wh;ded_refund_account_id;;;;;;;
 l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;account_id;coa_generic_217106;2.1.7.1.06;IRPJ a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;refund_account_id;coa_generic_114106;1.1.4.1.06;IRPJ a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_irpj_wh;l10n_br_coa.tax_group_irpj_wh;ded_refund_account_id;;;;;;;
 l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;account_id;coa_generic_216101;2.1.6.1.01;INSS a Recolher;;liability_current;0;l10n_br_coa_generic_template
 l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;refund_account_id;coa_generic_114111;1.1.4.1.11;INSS a Compensar;;asset_current;0;l10n_br_coa_generic_template
-l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;ded_account_id;;;;;;;;
-l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;ded_refund_account_id;;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;ded_account_id;;;;;;;
+l10n_br_coa_generic.account_tax_group_account_template_inss_wh;l10n_br_coa.tax_group_inss_wh;ded_refund_account_id;;;;;;;

@@ -410,7 +410,7 @@
         <field name="code_prefix_start">4.5.01.40</field>
         <field name="name">MULTAS</field>
         <field name="parent_id" ref="coa_reobote_4501"/>
-        </record>
+    </record>
     <record id="coa_reobote_450150" model="account.group.template">
         <field name="chart_template_id" ref="l10n_br_coa_generic_template"/>
         <field name="code_prefix_start">4.5.01.50</field>
