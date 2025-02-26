@@ -155,7 +155,7 @@
                                                 </t>
                                             </t>
                                             <t t-else="">
-                                                <span t-esc="(line.product_id.diametro_interno or '').upper()"/>
+                                                <span t-esc="(line.product_id.diametro_interno.name or '').upper()"/>
                                             </t>
                                         </td>
                                         
@@ -164,7 +164,7 @@
                                                 <span t-esc="(line.product_id.esp_tolerancia_menor.name or '').upper()"/> / <span t-esc="(line.product_id.esp_tolerancia_maior.name or '').upper()"/>
                                             </t>
                                             <t t-else="">
-                                                <span t-esc="(line.product_id.espessura or '').upper()"/>
+                                                <span t-esc="(line.product_id.espessura.name or '').upper()"/>
                                             </t>
                                         </td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;">
@@ -172,7 +172,7 @@
                                                 <span t-esc="(line.product_id.comp_tolerancia_menor.name or '').upper()"/> / <span t-esc="(line.product_id.comp_tolerancia_maior.name or '').upper()"/>
                                             </t>
                                             <t t-else="">
-                                                <span t-esc="(line.product_id.comprimento or '').upper()"/>
+                                                <span t-esc="(line.product_id.comprimento.name or '').upper()"/>
                                             </t>
                                         </td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line.product_id.perfil_externo.name or '').upper()"/></td>
