@@ -214,7 +214,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td colspan="18" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="line.product_id.obs.upper()"/></td>
+                                        <td colspan="18" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-esc="(line.product_id.obs or '').upper()"/></td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.price_unit" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                                         <td colspan="3" class="text-center" style="background-color: #e0e0e0; color: black; font-size: 10px; font-family: Arial, sans-serif; border: 2px solid white; height: 30px; vertical-align: middle; white-space: normal; word-wrap: break-word;"><span t-field="line.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></td>
                                     </tr>
